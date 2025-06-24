@@ -7,8 +7,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -19,14 +22,18 @@ public class Server extends Thread {
     private String IP;
     private List<ClientData> clients;
     private List<PlayerStatData> PlayerStats;
+    private List<Task> Tasks;
     private Lock ClientLock = new ReentrantLock();
     private Lock PlayerLock = new ReentrantLock();
+    private Lock TimeLock = new ReentrantLock();
+    private Task TT = new Task("No Task Assigned");
 
     public Server(Integer port, String IP) {
         this.port = port;
         this.IP = IP;
         clients = new ArrayList<>();
         PlayerStats = new ArrayList<>();
+        Tasks = new ArrayList<>();
     }
 
     @Override
@@ -40,6 +47,9 @@ public class Server extends Thread {
         File ClientsFile = null;
         File GroupsFile = null;
         File PlayerStatsFile = null;
+        File TasksFile = new File("src/main/java/org/example/Files/Tasks.json");
+        File TaskFile = null;
+        File TimeFile = null;
 
 
 //      check if the clients file exists
@@ -76,6 +86,24 @@ public class Server extends Thread {
             System.err.println(e);
         }
 
+//      Check if TimeFile Exists
+        try {
+            TimeFile = new File("src/main/java/org/example/Files/TimeFile.txt");
+            if (TimeFile.createNewFile()) {
+                System.out.println("File created");
+                FileWriter TimeFIleWriter = new FileWriter(TimeFile);
+                TimeFIleWriter.write(String.valueOf(LocalDate.now()));
+                TimeFIleWriter.close();
+            }
+            else{
+                System.out.println("File already exists");
+            }
+        }
+        catch (Exception e) {
+            System.err.println(e);
+        }
+
+
         Gson gson = new Gson();
 //        Load Clients
         if (ClientsFile.length() > 2){
@@ -101,23 +129,119 @@ public class Server extends Thread {
         }else{
             System.out.println("No PlayerStats found");
         }
+//        Load Tasks
+        if (TasksFile.length() > 2){
+            try(Reader TasksReader = new FileReader("src/main/java/org/example/Files/Tasks.json")) {
+                Type TasksType = new TypeToken<List<Task>>(){}.getType();
+                List<Task> CDList = gson.fromJson(TasksReader, TasksType);
+                if (CDList != null) Tasks.addAll(CDList);
+            }catch (Exception e) {
+                System.err.println(e);
+            }
+        }else{
+            System.out.println("No Tasks found");
+        }
 
-
-        String Task = "Placeholder text to fill out current";
 
         System.out.println("Server started");
         System.out.println(clients.size() + " clients");
         System.out.println(PlayerStats.size() + " PlayerStats");
 
-        DailyMidnightTask taskRunner = new DailyMidnightTask();
-        taskRunner.startDailyMidnightTask(() -> {
-            PlayerLock.lock();
-            System.out.println("Midnight reset running...");
-            for (PlayerStatData stat : PlayerStats) {
-                stat.UpdateValue();
+//      Check if TaskFile Exists
+        try {
+            TaskFile = new File("src/main/java/org/example/Files/TaskFile.txt");
+            if (TaskFile.createNewFile()) {
+                System.out.println("File created");
+                FileWriter TaskFIleWriter = new FileWriter(TaskFile);
+                String T = "No Set Task";
+                TaskFIleWriter.write(T);
+                TaskFIleWriter.close();
             }
-            PlayerLock.unlock();
+            else{
+                System.out.println("File already exists");
+            }
+        }
+        catch (Exception e) {
+            System.err.println(e);
+        }
+
+        // Initialize TT with a default task
+        if (Tasks.size() > 0) {
+            TT = new Task();
+            TT.setToDo(Tasks.get(0).getToDo());  // Set an initial value
+        }
+
+        File finalTimeFile = TimeFile;
+        File finalTaskFile = TaskFile;
+
+        Thread TimeCheck = new Thread(() -> {
+            while (true) {
+                try {
+                    Thread.sleep(30 * 60* 1000); // Check every 10 minutes
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    // Step 1: Read last written date
+                    LocalDate lastDate;
+                    try (BufferedReader br = new BufferedReader(new FileReader(finalTimeFile))) {
+                        String line = br.readLine();
+
+                        if (line == null || line.isBlank()) {
+                            // File is empty — assume today as default
+                            lastDate = LocalDate.now();
+                            try (FileWriter writer = new FileWriter(finalTimeFile)) {
+                                writer.write(lastDate.toString());
+                            }
+                        } else {
+                            lastDate = LocalDate.parse(line, DateTimeFormatter.ISO_LOCAL_DATE);
+                        }
+                    }
+
+
+                    // Step 2: Check current date
+                    LocalDate currentDate = LocalDate.now();
+                    if (currentDate.isAfter(lastDate)) {
+                        // Step 3: Update time file
+                        try (FileWriter writer = new FileWriter(finalTimeFile)) {
+                            writer.write(currentDate.toString());
+                        }
+
+                        // Step 4: Pick random task and update
+                        Random rand = new Random();
+                        if (!Tasks.isEmpty()) {
+                            int RandomIndex = rand.nextInt(Tasks.size());
+                            Task randomTask = Tasks.get(RandomIndex);
+                            System.out.println(randomTask.getToDo());
+                            if (randomTask != null && randomTask.getToDo() != null) {
+                                String T = randomTask.getToDo();
+                                TT.setToDo(T);
+
+                                try (FileWriter TaskWriter = new FileWriter(finalTaskFile)) {
+                                    TaskWriter.write(T);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            } else {
+                                System.err.println("Random task or task content was null.");
+                            }
+                        } else {
+                            System.err.println("No tasks available in the list.");
+                        }
+
+                    } else {
+                        System.out.println("Date unchanged. Still " + lastDate);
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         });
+
+        TimeCheck.start();
+
 
         while (true){
             Socket clientSocket = null;
@@ -127,7 +251,7 @@ public class Server extends Thread {
                 throw new RuntimeException(e);
             }
 
-            Worker W = new Worker(clientSocket,this.clients,this.PlayerStats,Task,this.ClientLock,this.PlayerLock);
+            Worker W = new Worker(clientSocket,this.clients,this.PlayerStats,TT.getToDo(),this.ClientLock,this.PlayerLock);
             W.start();
             System.out.println("Client connected");
 
