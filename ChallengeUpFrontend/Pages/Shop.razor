@@ -1,0 +1,57 @@
+@page "/shop"
+
+<div class="shop-container text-center">
+    <h2 class="shop-title mb-4">Shop</h2>
+
+    @if (canBuyStreakRevival)
+    {
+        <div class="streak-card position-relative">
+            <img src="images/fire-icon.png" class="shop-item-img mb-3" />
+            <h5>Streak Revival</h5>
+            <p class="text-muted">Restore your streak!</p>
+
+            <button class="btn btn-primary gem-button" @onclick="BuyStreakRevival" disabled="@isBuying">
+                @if (isBuying)
+                {
+                    <span>Processing...</span>
+                }
+                else
+                {
+                    <div class="gem-content">
+                        <span>100</span>
+                        <img src="images/gem-icon.png" alt="Gem" class="icon-inline" />
+                    </div>
+                }
+            </button>
+
+            @if (showGemAnimation)
+            {
+                <div class="gem-animation">
+                    <img src="images/gem-icon.png" class="gem" />
+                    <img src="images/gem-icon.png" class="gem delay1" />
+                    <img src="images/gem-icon.png" class="gem delay2" />
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-muted">Nothing available to buy right now.</p>
+    }
+</div>
+
+@code {
+    bool canBuyStreakRevival = true;
+    bool isBuying = false;
+    bool showGemAnimation = false;
+
+    async Task BuyStreakRevival()
+    {
+        isBuying = true;
+        showGemAnimation = true;
+        await Task.Delay(1200);
+        showGemAnimation = false;
+        isBuying = false;
+        Console.WriteLine("Streak Revival purchased!");
+    }
+}

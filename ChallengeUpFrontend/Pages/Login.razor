@@ -1,0 +1,43 @@
+@page "/login"
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+
+<div class="login-wrapper">
+    <div class="login-card">
+        <h2>Challenge Up</h2>
+        <input class="login-input" placeholder="Username" @bind="username" />
+        <input type="password" class="login-input" placeholder="Password" @bind="password" />
+        <button class="login-btn" @onclick="LoginAsync">Log In</button>
+        <button class="signup-btn" @onclick="RegisterAsync">Sign Up</button>
+
+        @if (!string.IsNullOrEmpty(error))
+        {
+            <div class="login-error">@error</div>
+        }
+    </div>
+</div>
+
+@code {
+    private string username = "";
+    private string password = "";
+    private string? error;
+
+    private async Task LoginAsync()
+    {
+        if (username == "admin" && password == "1234")
+        {
+            await JS.InvokeVoidAsync("localStorage.setItem", "loggedIn", "true");
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            error = "Invalid credentials!";
+        }
+    }
+
+    private async Task RegisterAsync()
+    {
+        await JS.InvokeVoidAsync("localStorage.setItem", "loggedIn", "true");
+        NavigationManager.NavigateTo("/");
+    }
+}

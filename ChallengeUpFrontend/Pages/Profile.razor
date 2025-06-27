@@ -1,0 +1,47 @@
+@page "/profile"
+@inject IJSRuntime JS
+@inject NavigationManager Navigation
+@inject MockUserStatsService UserStatsService
+@using ChallengeUpFrontend.Services
+@using ChallengeUpFrontend.Models
+
+<h2 class="profile-title">Profile</h2>
+
+<div class="profile-card">
+    <h4>@username</h4>
+
+    <div class="profile-stats">
+        <div class="stat-item">
+            <img src="images/fire-icon.png" alt="Streak" />
+            <span>Streak: @stats?.Streak days</span>
+        </div>
+        <div class="stat-item">
+            <img src="images/star-icon.png" alt="XP" />
+            <span>XP: @stats?.Score</span>
+        </div>
+        <div class="stat-item">
+            <img src="images/gem-icon.png" alt="Gems" />
+            <span>Gems: @stats?.Gems</span>
+        </div>
+    </div>
+
+    <button class="logout-btn" @onclick="Logout">Log out</button>
+</div>
+
+@code {
+    string username = "Guest";
+    UserStats? stats;
+
+    protected override async Task OnInitializedAsync()
+    {
+        stats = await UserStatsService.GetUserStatsAsync();
+        username = await JS.InvokeAsync<string>("localStorage.getItem", "username") ?? "Guest";
+    }
+
+    async Task Logout()
+    {
+        await JS.InvokeVoidAsync("localStorage.removeItem", "loggedIn");
+        await JS.InvokeVoidAsync("localStorage.removeItem", "username");
+        Navigation.NavigateTo("/login", forceLoad: true);
+    }
+}

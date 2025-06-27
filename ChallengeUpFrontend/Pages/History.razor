@@ -1,0 +1,37 @@
+@page "/history"
+
+<div class="history-container text-center">
+    <h2 class="history-title mb-4">Challenge History</h2>
+
+    @if (completedChallenges.Any())
+    {
+        <div class="challenge-history-list">
+            @foreach (var challenge in completedChallenges)
+            {
+                <div class="history-card">
+                    <h5>@challenge.Title</h5>
+                    <p class="text-muted">Completed on @challenge.Date.ToString("MMM dd, yyyy")</p>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-muted">No completed challenges yet.</p>
+    }
+</div>
+
+@code {
+    public class ChallengeRecord
+    {
+        public string Title { get; set; }
+        public DateTime Date { get; set; }
+    }
+
+    List<ChallengeRecord> completedChallenges = new()
+    {
+        new ChallengeRecord { Title = "Drink 2L of Water", Date = DateTime.Now.AddDays(-1) },
+        new ChallengeRecord { Title = "Learn 5 new words", Date = DateTime.Now.AddDays(-2) },
+        new ChallengeRecord { Title = "10 pushups", Date = DateTime.Now.AddDays(-3) }
+    };
+}

@@ -1,0 +1,44 @@
+@page "/"
+@using ChallengeUpFrontend.Services
+@using ChallengeUpFrontend.Models
+@inject MockChallengeService ChallengeService
+@inject MockUserStatsService UserStatsService
+
+<!-- Daily Challenge Preview -->
+<div class="text-center mt-4">
+    <h3 class="mb-3 text-center display-6">🔥 Today's Challenge</h3>
+
+
+    @if (dailyChallenge is null)
+    {
+        <p>Loading...</p>
+    }
+    else
+    {
+        <div class="challenge-card">
+            <div class="d-flex align-items-start gap-3">
+                <input type="checkbox" class="form-check-input mt-1" @bind="dailyChallenge.IsCompleted" />
+                <div>
+                    <h4 class="fw-bold mb-1" style="@(dailyChallenge.IsCompleted ? "text-decoration: line-through;" : "")">
+                        @dailyChallenge.Text
+                    </h4>
+                    <p class="text-muted mb-0">@dailyChallenge.Category – @dailyChallenge.Points pts</p>
+                </div>
+            </div>
+        </div>
+
+
+    }
+</div>
+
+@code {
+    private UserStats? stats;
+    private Challenge? dailyChallenge;
+
+    protected override async Task OnInitializedAsync()
+    {
+        stats = await UserStatsService.GetUserStatsAsync();
+        var challenges = await ChallengeService.GetDailyChallengesAsync();
+        dailyChallenge = challenges.FirstOrDefault();
+    }
+}
