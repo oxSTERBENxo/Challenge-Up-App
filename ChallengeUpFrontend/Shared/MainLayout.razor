@@ -1,0 +1,170 @@
+﻿@inherits LayoutComponentBase
+@using ChallengeUpFrontend.Services
+@using ChallengeUpFrontend.Models
+@inject MockUserStatsService UserStatsService
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+
+@code {
+    private UserStats? stats;
+    private List<DayStreak> last7Days = new();
+    private bool ShouldHideLayout => Navigation.Uri.Contains("/login");
+    private bool showStreakLostPopup = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        stats = await UserStatsService.GetUserStatsAsync();
+
+        // Just for demo. Replace with real logic for Completed
+        var today = DateTime.Today;
+        last7Days = Enumerable.Range(0, 7)
+            .Select(i =>
+            {
+                var date = today.AddDays(-6 + i);
+                return new DayStreak
+                {
+                    Date = date,
+                    DayShort = date.ToString("ddd")[0].ToString(),
+                    Completed = Random.Shared.Next(2) == 1 // Replace with real check
+                };
+            })
+            .ToList();
+
+        // Simulated streak lost flag — in future this would come from API/service
+        var streakLost = await JS.InvokeAsync<string>("localStorage.getItem", "streakLost");
+
+        if (streakLost == "true")
+        {
+            showStreakLostPopup = true;
+            await JS.InvokeVoidAsync("localStorage.removeItem", "streakLost"); // Prevent showing again
+        }
+    }
+
+
+    public class DayStreak
+    {
+        public DateTime Date { get; set; }
+        public string DayShort { get; set; } = "";
+        public bool Completed { get; set; }
+    }
+    
+    private void ToggleShop()
+    {
+        // This is a placeholder — you'll replace it with real shop logic later
+        Console.WriteLine("Shop clicked");
+    }
+}
+
+<div class="d-flex flex-column min-vh-100">
+
+    <!-- Top Stats Bar -->
+    @if (!ShouldHideLayout && stats != null)
+    {
+        <div class="d-flex justify-content-around align-items-center my-3 py-2 px-4 bg-light shadow-sm rounded-pill mx-auto" style="width: 98%;">
+            
+            <!-- Streak -->
+            <div class="streak-container position-relative">
+                <img src="images/fire-icon.png" width="22" alt="Streak" class="hoverable-streak-icon" />
+                <span class="fw-bold text-black">@stats?.Streak</span>
+
+                <!-- Tooltip-like popover -->
+                <div class="streak-popover">
+                    <div class="d-flex justify-content-between text-center">
+                        @foreach (var day in last7Days)
+                        {
+                            <div class="mx-1">
+                                <div class="streak-day-circle">
+                                    @{
+                                        var isToday = day.Date.Date == DateTime.Today;
+                                        string? icon = null;
+
+                                        if (day.Completed)
+                                        {
+                                            icon = "fire-icon.gif";
+                                        }
+                                        else if (isToday)
+                                        {
+                                            icon = "clock-icon.gif";
+                                        }
+                                        else
+                                        {
+                                            icon = "512.gif";
+                                        }
+
+                                    }
+
+                                    @if (!string.IsNullOrEmpty(icon))
+                                    {
+                                        <img src="images/@icon" width="18" />
+                                    }
+
+                                </div>
+                                <div class="day-label">@day.DayShort</div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gems -->
+            <div class="d-flex align-items-center gap-1">
+                <img src="images/gem-icon.png" width="22" alt="Gems" />
+                <span class="fw-bold text-black">@stats?.Gems</span>
+            </div>
+
+            <!-- Score -->
+            <div class="d-flex align-items-center gap-1">
+                <img src="images/star-icon.png" width="22" alt="Score" />
+                <span class="fw-bold text-black">@stats?.Score</span>
+            </div>
+        </div>
+    }
+
+    <!-- Page Body -->
+    <main class="flex-grow-1 px-4">
+        @if (showStreakLostPopup)
+        {
+            <div class="popup-overlay">
+                <div class="popup-content text-center">
+                    <h5 class="mb-2">
+                        <img src="images/rolling-eyes.gif" alt="Fire" width="24" style="vertical-align: middle; margin-right: 6px;" />
+                        You lost your streak!
+                    </h5>
+
+                    <p>Quick! Revive it in the shop!</p>
+                    <button class="btn btn-warning mt-2" @onclick="() => showStreakLostPopup = false">Okay</button>
+                </div>
+            </div>
+        }
+
+        @Body
+    </main>
+
+    <!-- Footer dashboard thingy -->
+    @if (!ShouldHideLayout)
+    {
+        <div class="footer-wrapper">
+            <div class="d-flex justify-content-around align-items-center bg-light shadow-sm rounded-pill mx-auto" style="width: 90%; padding: 0.6rem 1.2rem;">
+                <a href="/shop" class="footer-widget-link">
+                    <img src="images/shop-footer-icon.png" alt="Shop" class="footer-widget-icon"/>
+                </a>
+                <a href="/" class="footer-widget-link">
+                    <img src="images/home-footer-icon.png" alt="Home" class="footer-widget-icon"/>
+                </a>
+                <a href="/history" class="footer-widget-link">
+                    <img src="images/history-footer-icon.png" alt="History" class="footer-widget-icon"/>
+                </a>
+                <a href="/profile" class="footer-widget-link">
+                    <img src="images/513.gif" alt="Profile" class="footer-widget-icon"/>
+                </a>
+
+            </div>
+        </div>
+    }
+
+
+
+
+
+
+</div>

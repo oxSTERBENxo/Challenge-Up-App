@@ -1,0 +1,28 @@
+﻿@inject IJSRuntime JS
+@inject NavigationManager Nav
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var isLoggedIn = await JS.InvokeAsync<string>("localStorage.getItem", "loggedIn");
+
+        var currentUri = Nav.ToBaseRelativePath(Nav.Uri).ToLower();
+
+        if (isLoggedIn != "true" && currentUri != "login")
+        {
+            Nav.NavigateTo("/login", true);
+        }
+    }
+}
+
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p>Sorry, nothing found.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
