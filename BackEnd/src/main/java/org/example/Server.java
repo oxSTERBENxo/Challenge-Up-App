@@ -203,12 +203,12 @@ public class Server extends Thread {
                     // Step 2: Check current date
                     LocalDate currentDate = LocalDate.now();
                     if (currentDate.isAfter(lastDate)) {
-                        // Step 3: Update time file
+                        // Step 3.1: Update time file
                         try (FileWriter writer = new FileWriter(finalTimeFile)) {
                             writer.write(currentDate.toString());
                         }
 
-                        // Step 4: Pick random task and update
+                        // Step 3.2: Pick random task and update
                         Random rand = new Random();
                         if (!Tasks.isEmpty()) {
                             int RandomIndex = rand.nextInt(Tasks.size());
@@ -229,6 +229,11 @@ public class Server extends Thread {
                         } else {
                             System.err.println("No tasks available in the list.");
                         }
+
+                        for (PlayerStatData playerStat : PlayerStats) {
+                            playerStat.UpdateValue(TT.getToDo());
+                        }
+                        DataManagment.saveList(PlayerStats, "\"src/main/java/org/example/Files/PlayerStats.json");
 
                     } else {
                         System.out.println("Date unchanged. Still " + lastDate);

@@ -38,7 +38,7 @@ public class Worker extends Thread {
     }
 
     private boolean IsPasswordStrong(String password, String name){
-        if(password.length() < 6 || !password.contains(".*[!@#$%^&*].*") || password.equals(name)){
+        if(password.length() < 6 || password.equals(name)){
             return false;
         }
         return true;
@@ -69,9 +69,7 @@ public class Worker extends Thread {
                 System.out.println(cmd.getCommand());
 
                 switch (cmd.getCommand()) {
-
-
-//                  AccountManagement
+                    //AccountManagement
                     //Important: EXTRA(USERNAME;EMAIL;PASSWORD)
                     case "CreateAccount":{
                         CLientLock.lock();
@@ -87,11 +85,11 @@ public class Worker extends Thread {
                             out.write("Error: Username is already taken");
                             out.newLine();
                             out.flush();
-                        } else if (IsPasswordStrong(Extra[2], Extra[0])) {
+                        } else if (!IsPasswordStrong(Extra[2], Extra[0])) {
                             out.write("Error: Invalid password");
                             out.newLine();
                             out.flush();
-                        } else if (IsEmailRight(Extra[1])) {
+                        } else if (!IsEmailRight(Extra[1])) {
                             out.write("Error: Invalid email");
                             out.newLine();
                             out.flush();
@@ -101,7 +99,7 @@ public class Worker extends Thread {
                             out.write("Client created account");
                             out.newLine();
                             out.flush();
-                            DataManagment.saveList(PlayerStats, "\"src/main/java/org/example/Files/PlayerStats.json");
+                            DataManagment.saveList(PlayerStats, "src/main/java/org/example/Files/PlayerStats.json");
                             DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
                         }
                         CLientLock.unlock();
@@ -234,23 +232,7 @@ public class Worker extends Thread {
                         break;
                     }
 
-
-//                  StatsManagement
-                    //Important: NONE
-                    case "GetTop10":{
-                        PlayerLock.lock();
-                        List<PlayerStatData> temp = PlayerStats;
-                        temp.sort((a,b) -> Integer.compare(b.getPoints(), a.getPoints()));
-                        List<PlayerStatData> top10 = new ArrayList<>(temp.subList(0, Math.min(PlayerStats.size(), 10)));
-                        out.write(gson.toJson(top10));
-                        out.newLine();
-                        out.flush();
-                        PlayerLock.unlock();
-                        break;
-                    }
-
-
-//                  Points Managment
+                    //Points Management
                     //Important: EXTRA(USERNAME)
                     case "CompletedTask":{
                         PlayerLock.lock();
@@ -272,12 +254,123 @@ public class Worker extends Thread {
                             out.write("Task successfully marked completed");
                             out.newLine();
                             out.flush();
+                            DataManagment.saveList(PlayerStats, "src/main/java/org/example/Files/PlayerStats.json");
                         }else {
                             out.write("Error: Account does not exist");
                             out.newLine();
                             out.flush();
                         }
                         PlayerLock.unlock();
+                        break;
+                    }
+                    //Important: EXTRA(USERNAME)
+                    case "GetPlayerStats":{
+                        PlayerLock.lock();
+                        String[] Extra = cmd.getExtra().split(";");
+
+                        PlayerStatData PSD= null;
+
+                        for(PlayerStatData psd : PlayerStats) {
+                            if(psd.getUsername().equals(Extra[0])) {
+                                PSD = psd;
+                                break;
+                            }
+                        }
+
+                        if(PSD != null) {
+                            out.write(gson.toJson(PSD));
+                            out.newLine();
+                            out.flush();
+                        }else {
+                            out.write("Error: Account does not exist");
+                            out.newLine();
+                            out.flush();
+                        }
+                        PlayerLock.unlock();
+                        break;
+                    }
+                    //Important: EXTRA(USERNAME)
+                    case "PayToReset":{
+                        PlayerLock.lock();
+                        String[] Extra = cmd.getExtra().split(";");
+
+                        PlayerStatData PSD= null;
+
+                        for(PlayerStatData psd : PlayerStats) {
+                            if(psd.getUsername().equals(Extra[0])) {
+                                PSD = psd;
+                                PlayerStats.remove(psd);
+                                break;
+                            }
+                        }
+
+                        if(PSD != null) {
+                            Integer Value = PSD.RestoreTemp();
+                            PlayerStats.add(PSD);
+                            if (Value > 0) {
+                                out.write("Success " + PSD.getUsername());
+                                out.newLine();
+                                out.flush();
+                            }else {
+                                out.write("Error not enough gems");
+                                out.newLine();
+                                out.flush();
+                            }
+                        }else {
+                            out.write("Error: Account does not exist");
+                            out.newLine();
+                            out.flush();
+                        }
+                        PlayerLock.unlock();
+                        break;
+                    }
+                    //Important: EXTRA(USERNAME;GEMSAMMOUNT)
+                    case "AddGems":{
+                        PlayerLock.lock();
+                        String[] Extra = cmd.getExtra().split(";");
+
+                        PlayerStatData PSD= null;
+
+                        for(PlayerStatData psd : PlayerStats) {
+                            if(psd.getUsername().equals(Extra[0])) {
+                                PSD = psd;
+                                PlayerStats.remove(psd);
+                                break;
+                            }
+                        }
+
+                        if(PSD != null) {
+                            PSD.AddGems(Integer.parseInt(Extra[1]));
+                            PlayerStats.add(PSD);
+                            out.write("Successfully added gems");
+                            out.newLine();
+                            out.flush();
+                        }else {
+                            out.write("Error: Account does not exist");
+                            out.newLine();
+                            out.flush();
+                        }
+                        PlayerLock.unlock();
+                        break;
+                    }
+                    //Important: NONE
+                    case "GetTop10":{
+                        PlayerLock.lock();
+                        List<PlayerStatData> temp = PlayerStats;
+                        temp.sort((a,b) -> Integer.compare(b.getPoints(), a.getPoints()));
+                        List<PlayerStatData> top10 = new ArrayList<>(temp.subList(0, Math.min(PlayerStats.size(), 10)));
+                        out.write(gson.toJson(top10));
+                        out.newLine();
+                        out.flush();
+                        PlayerLock.unlock();
+                        break;
+                    }
+
+                    //Default command to handle unknown commands
+                    default:{
+                        out.write("Error: Unknown command");
+                        out.newLine();
+                        out.flush();
                         break;
                     }
                 }

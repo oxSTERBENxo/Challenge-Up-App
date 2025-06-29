@@ -50,12 +50,6 @@ public class Client extends Thread {
             while (true) {
                 System.out.print("enter a command: ");
                 String Command = sc.nextLine();
-                System.out.println("enter a username:");
-                String username = sc.nextLine();
-                System.out.println("enter a Email:");
-                String email = sc.nextLine();
-                System.out.println("enter a password:");
-                String password = sc.nextLine();
                 System.out.println("enter Extra:");
                 String extra = sc.nextLine();
 
@@ -64,7 +58,7 @@ public class Client extends Thread {
                     break;
                 }
 
-                Command CMD = new Command(Command,username,email,password,extra);
+                Command CMD = new Command(Command,extra);
                 String Json = gson.toJson(CMD);
                 out.write(Json);
                 out.newLine();

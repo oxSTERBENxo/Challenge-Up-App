@@ -4,7 +4,7 @@ public class Command {
     private String command;
     private String Extra;
 
-    public Command(String command, String Username,String Email, String Password, String Extra) {
+    public Command(String command, String Extra) {
         this.command = command;
         this.Extra = Extra;
     }

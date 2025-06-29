@@ -1,29 +1,90 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class PlayerStatData {
     private String Username;
     private Integer Points;
     private Integer Days;
-    private boolean Compleated;
+    private Integer Gems;
+    private boolean Completed;
+
+    private List<String> CompletedTasks;
+    private Queue<Boolean> Last7Days;
+
+    // temp data for backup
+
+    private Queue<Boolean> Last7DaysTemp;
+    private List<String> CompletedTasksTemp;
+    private Integer PointsTemp;
+    private Integer DaysTemp;
 
     public PlayerStatData(String username, Integer points, Integer days) {
         this.Username = username;
         this.Points = points;
         this.Days = days;
-        this.Compleated = false;
+        this.Gems = 100; // default gems
+        this.Completed = false;
+
+        this.CompletedTasks = new ArrayList<String>();
+        this.Last7Days = new LinkedList<Boolean>();
+        this.CompletedTasksTemp = new ArrayList<String>();
+        this.Last7DaysTemp = new LinkedList<Boolean>();
+
+        for (int i = 0; i < 7; i++) {
+            this.Last7Days.add(false);
+            this.Last7DaysTemp.add(false);
+        }
     }
 
-    public void UpdateValue() {
+    public void UpdateValue(String Task) {
         if(isCompleted()){
             int EffectiveStreak = Math.max(getDays(), 10);
             int Points = 50 + ((int)Math.pow(EffectiveStreak, 1.5) * 5);
             setPoints(getPoints() + Points);
             setDays(getDays() + 1);
+            CompletedTasks.add(Task);
+            CompletedTasksTemp.add(Task);
+            Last7Days.poll();
+            Last7Days.add(true);
+            Last7DaysTemp.poll();
+            Last7DaysTemp.add(true);
+            setCompleted(false);
         }else {
-            setDays(0);
+            CompletedTasksTemp.clear();
+            CompletedTasksTemp.addAll(CompletedTasks);
+            Last7DaysTemp.clear();
+            Last7DaysTemp.addAll(Last7Days);
+            PointsTemp = getPoints();
+            DaysTemp = getDays();
+
             setPoints(0);
+            setDays(0);
+            CompletedTasks.clear();
+            for (int i = 0; i < 7; i++) {
+                Last7Days.poll();
+                Last7Days.add(false);
+            }
         }
     }
+
+    public Integer RestoreTemp() {
+        if (Gems >= 100) {
+            CompletedTasks.clear();
+            CompletedTasks.addAll(CompletedTasksTemp);
+            Last7Days.clear();
+            Last7Days.addAll(Last7DaysTemp);
+            setPoints(PointsTemp);
+            setDays(DaysTemp);
+            return Gems+1;
+        }else {
+            return 0;
+        }
+    }
+
 
     public String getUsername() {
         return Username;
@@ -41,10 +102,19 @@ public class PlayerStatData {
         Days = days;
     }
     public boolean isCompleted() {
-        return Compleated;
+        return Completed;
     }
     public void setCompleted(boolean completed) {
-        Compleated = completed;
+        Completed = completed;
+    }
+    public Integer getGems() {
+        return Gems;
+    }
+    public void setGems(Integer gems) {
+        Gems = gems;
+    }
+    public void AddGems(Integer gems) {
+        this.Gems += gems;
     }
 
     @Override
