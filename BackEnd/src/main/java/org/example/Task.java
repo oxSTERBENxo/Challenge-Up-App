@@ -1,5 +1,8 @@
 package org.example;
 
+import java.time.LocalDate;
+import java.util.List;
+
 public class Task {
     private String ToDo;
     private LocalDate completedAt;
