@@ -20,4 +20,14 @@ public class DataManagment {
             return gson.fromJson(reader, typeOfT);
         }
     }
+    public static <T> void saveObject(T object, String filePath) throws IOException {
+        try (Writer writer = new FileWriter(filePath)) {
+            gson.toJson(object, writer);
+        }
+    }
+    public static <T> T loadObject(String filePath, Class<T> classOfT) throws IOException {
+        try (Reader reader = new FileReader(filePath)) {
+            return gson.fromJson(reader, classOfT);
+        }
+    }
 }

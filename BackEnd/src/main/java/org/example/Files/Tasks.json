@@ -1,22 +1,82 @@
 [
-  {"ToDo": "Read a 200 page book"},
-  {"ToDo": "Ride a bike for 8km"},
-  {"ToDo": "Write a 1000 word essay"},
-  {"ToDo": "Cook a new recipe"},
-  {"ToDo": "Learn a new programming language"},
-  {"ToDo": "Complete a puzzle"},
-  {"ToDo": "Run for 5km"},
-  {"ToDo": "Watch a documentary"},
-  {"ToDo": "Practice a musical instrument"},
-  {"ToDo": "Organize your workspace"},
-  {"ToDo": "Meditate for 30 minutes"},
-  {"ToDo": "Plant a tree"},
-  {"ToDo": "Volunteer for a local charity"},
-  {"ToDo": "Create a piece of art"},
-  {"ToDo": "Attend a workshop or seminar"},
-  {"ToDo": "Write a letter to a friend"},
-  {"ToDo": "Explore a new hiking trail"},
-  {"ToDo": "Try a new sport"},
-  {"ToDo": "Learn to cook a new cuisine"},
-  {"ToDo": "Take a day trip to a nearby city"}
+  {"ToDo": "Read a 200 page book",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Ride a bike for 8km",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Write a 1000 word essay",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Cook a new recipe",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Learn a new programming language",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Complete a puzzle",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Run for 5km",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Watch a documentary",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Practice a musical instrument",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Organize your workspace",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Meditate for 30 minutes",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Plant a tree",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Volunteer for a local charity",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Create a piece of art",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Attend a workshop or seminar",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Write a letter to a friend",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Explore a new hiking trail",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Try a new sport",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Learn to cook a new cuisine",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  },
+  {"ToDo": "Take a day trip to a nearby city",
+    "completedAt": "1970-01-01",
+    "PointsAmount": "10"
+  }
 ]

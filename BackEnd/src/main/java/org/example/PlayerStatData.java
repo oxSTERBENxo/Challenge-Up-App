@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.time.LocalDate;
 
 public class PlayerStatData {
     private String Username;
@@ -12,13 +13,12 @@ public class PlayerStatData {
     private Integer Gems;
     private boolean Completed;
 
-    private List<String> CompletedTasks;
+    private List<Task> CompletedTasks;
     private Queue<Boolean> Last7Days;
 
     // temp data for backup
-
     private Queue<Boolean> Last7DaysTemp;
-    private List<String> CompletedTasksTemp;
+    private List<Task> CompletedTasksTemp;
     private Integer PointsTemp;
     private Integer DaysTemp;
 
@@ -29,9 +29,9 @@ public class PlayerStatData {
         this.Gems = 100; // default gems
         this.Completed = false;
 
-        this.CompletedTasks = new ArrayList<String>();
+        this.CompletedTasks = new ArrayList<Task>();
         this.Last7Days = new LinkedList<Boolean>();
-        this.CompletedTasksTemp = new ArrayList<String>();
+        this.CompletedTasksTemp = new ArrayList<Task>();
         this.Last7DaysTemp = new LinkedList<Boolean>();
 
         for (int i = 0; i < 7; i++) {
@@ -40,12 +40,18 @@ public class PlayerStatData {
         }
     }
 
-    public void UpdateValue(String Task) {
+    public Integer CalulatePointsToBeEarned(Task T) {
+        int EffectiveStreak = Math.min(getDays(), 14);
+        double Points = T.getPointsAmount() * EffectiveStreak+1; // log base 2
+        return (int) Points;
+    }
+
+    public void UpdateValue(Task Task) {
         if(isCompleted()){
-            int EffectiveStreak = Math.max(getDays(), 10);
-            int Points = 50 + ((int)Math.pow(EffectiveStreak, 1.5) * 5);
+            int Points = CalulatePointsToBeEarned(Task);
             setPoints(getPoints() + Points);
             setDays(getDays() + 1);
+            Task.setCompletedAt(LocalDate.now().toString());
             CompletedTasks.add(Task);
             CompletedTasksTemp.add(Task);
             Last7Days.poll();
@@ -77,6 +83,7 @@ public class PlayerStatData {
             CompletedTasks.addAll(CompletedTasksTemp);
             Last7Days.clear();
             Last7Days.addAll(Last7DaysTemp);
+            setGems(getGems() - 100);
             setPoints(PointsTemp);
             setDays(DaysTemp);
             return Gems+1;

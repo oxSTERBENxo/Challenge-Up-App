@@ -5,16 +5,18 @@ import java.util.List;
 
 public class Task {
     private String ToDo;
-    private LocalDate completedAt;
-    private List<String> classes;
+    private String completedAt;
+    private Integer PointsAmount;
 
     public Task (String ToDo) {
         this.ToDo = ToDo;
+        this.completedAt = "1970-01-01"; // default date
+        this.PointsAmount = 10; // default points
     }
-    public Task (String ToDo, LocalDate completedAt, List<String> classes){
+    public Task (String ToDo, String completedAt, Integer PointsAmount) {
         this.ToDo=ToDo;
         this.completedAt = completedAt;
-        this.classes = classes;
+        this.PointsAmount = PointsAmount;
     }
     public Task() {}
 
@@ -24,19 +26,19 @@ public class Task {
     public void setToDo(String toDo) {
         ToDo = toDo;
     }
-    public LocalDate getCompletedAt() {
+    public String getCompletedAt() {
         return completedAt;
     }
 
-    public void setCompletedAt(LocalDate completedAt) {
+    public void setCompletedAt(String completedAt) {
         this.completedAt = completedAt;
     }
 
-    public List<String> getClasses() {
-        return classes;
+    public Integer getPointsAmount() {
+        return PointsAmount;
     }
 
-    public void setClasses(List<String> classes) {
-        this.classes = classes;
+    public void setPointsAmount(Integer pointsAmount) {
+        PointsAmount = pointsAmount;
     }
 }
