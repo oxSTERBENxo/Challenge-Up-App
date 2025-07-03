@@ -1,6 +1,8 @@
 @page "/login"
+@inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
+@using ChallengeUpFrontend.Models
 
 <div class="login-wrapper">
     <div class="login-card">
@@ -18,26 +20,89 @@
 </div>
 
 @code {
-    private string username = "";
-    private string password = "";
+    private string username { get; set; }
+    private string password { get; set; }
+    private string responseMessage { get; set; }
+    private string[] parts;
     private string? error;
 
     private async Task LoginAsync()
     {
-        if (username == "admin" && password == "1234")
+        var url = $"http://localhost:8080/?Command=Login&Extra={Uri.EscapeDataString($"{username};{password}")}";
+        responseMessage = await SendRequest(url);
+
+        parts = responseMessage.Split(':');
+
+        LogMessage();
+        
+        if (parts.Length > 1)
         {
-            await JS.InvokeVoidAsync("localStorage.setItem", "loggedIn", "true");
-            NavigationManager.NavigateTo("/");
+            error = "Invalid Username/password";
         }
         else
         {
-            error = "Invalid credentials!";
+            error = null;
+            var obj = new PlayerLogin(username, password);
+            var json = System.Text.Json.JsonSerializer.Serialize(obj);
+            await JS.InvokeVoidAsync("sessionStorage.setItem", "LoginInfo", json);
+            NavigationManager.NavigateTo("/");
         }
     }
 
     private async Task RegisterAsync()
     {
-        await JS.InvokeVoidAsync("localStorage.setItem", "loggedIn", "true");
-        NavigationManager.NavigateTo("/");
+        var url = $"http://localhost:8080/?Command=CreateAccount&Extra={Uri.EscapeDataString($"{username};{password}")}";
+        responseMessage = await SendRequest(url);
+        
+        parts = responseMessage.Split(':');
+
+        LogMessage();
+        
+        if (parts.Length > 1)
+        {
+            switch (parts[1])
+            {
+                case "1":
+                    error = "Client already exists";
+                    break;
+                case "2":
+                    error = "Username already used";
+                    break;
+                case "3":
+                    error = "Password not strong";
+                    break;
+                default:
+                    error = "Unknown response from server";
+                    break;
+            }
+        }
+        else
+        {
+            error = null;
+            var obj = new PlayerLogin(username, password);
+            var json = System.Text.Json.JsonSerializer.Serialize(obj);
+            await JS.InvokeVoidAsync("sessionStorage.setItem", "LoginInfo", json);
+            NavigationManager.NavigateTo("/");
+        }
+    }
+
+    private async Task<string> SendRequest(string url)
+    {
+        try
+        {
+            var response = await Http.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+            string result = await response.Content.ReadAsStringAsync();
+            return result;
+        }
+        catch (Exception ex)
+        {
+            return $"Error: {ex.Message}";
+        }
+    }
+    
+    private async Task LogMessage()
+    {
+        await JS.InvokeVoidAsync("console.log", parts);
     }
 }

@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\evakn\\RiderProjects\\ChallengeUpFrontend\\ChallengeUpFrontend\\ChallengeUpFrontend.csproj": {}
+    "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\ChallengeUpFrontend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\evakn\\RiderProjects\\ChallengeUpFrontend\\ChallengeUpFrontend\\ChallengeUpFrontend.csproj": {
+    "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\ChallengeUpFrontend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\evakn\\RiderProjects\\ChallengeUpFrontend\\ChallengeUpFrontend\\ChallengeUpFrontend.csproj",
+        "projectUniqueName": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\ChallengeUpFrontend.csproj",
         "projectName": "ChallengeUpFrontend",
-        "projectPath": "C:\\Users\\evakn\\RiderProjects\\ChallengeUpFrontend\\ChallengeUpFrontend\\ChallengeUpFrontend.csproj",
-        "packagesPath": "C:\\Users\\evakn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\evakn\\RiderProjects\\ChallengeUpFrontend\\ChallengeUpFrontend\\obj\\",
+        "projectPath": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\ChallengeUpFrontend.csproj",
+        "packagesPath": "C:\\Users\\blaze\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\evakn\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\blaze\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,7 +39,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net7.0": {
@@ -46,6 +59,24 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.20, )"
+            },
+            "Microsoft.NET.ILLink.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.Sdk.WebAssembly.Pack": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.2, )",
+              "autoReferenced": true
             }
           },
           "imports": [
@@ -61,7 +92,19 @@
           "warn": true,
           "downloadDependencies": [
             {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
               "version": "[7.0.20, 7.0.20]"
             }
           ],
@@ -70,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

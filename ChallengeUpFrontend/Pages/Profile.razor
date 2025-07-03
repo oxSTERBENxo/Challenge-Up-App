@@ -1,9 +1,8 @@
 @page "/profile"
 @inject IJSRuntime JS
 @inject NavigationManager Navigation
-@inject MockUserStatsService UserStatsService
-@using ChallengeUpFrontend.Services
 @using ChallengeUpFrontend.Models
+@using System.Text.Json
 
 <h2 class="profile-title">Profile</h2>
 
@@ -13,11 +12,11 @@
     <div class="profile-stats">
         <div class="stat-item">
             <img src="images/fire-icon.png" alt="Streak" />
-            <span>Streak: @stats?.Streak days</span>
+            <span>Streak: @stats?.Days days</span>
         </div>
         <div class="stat-item">
             <img src="images/star-icon.png" alt="XP" />
-            <span>XP: @stats?.Score</span>
+            <span>XP: @stats?.Points</span>
         </div>
         <div class="stat-item">
             <img src="images/gem-icon.png" alt="Gems" />
@@ -34,8 +33,10 @@
 
     protected override async Task OnInitializedAsync()
     {
-        stats = await UserStatsService.GetUserStatsAsync();
-        username = await JS.InvokeAsync<string>("localStorage.getItem", "username") ?? "Guest";
+        string json = await JS.InvokeAsync<string>("sessionStorage.getItem", "UserStats");
+        stats = JsonSerializer.Deserialize<UserStats>(json);
+
+        username = stats.Username;
     }
 
     async Task Logout()

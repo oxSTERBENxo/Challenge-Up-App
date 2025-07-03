@@ -1,0 +1,120 @@
+Index: ../.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"61cf0d3e-2ed9-42f1-b864-71907b30445b\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/material_theme_project_new.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/material_theme_project_new.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <excluded-from-favorite>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"main\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </excluded-from-favorite>\r\n    <favorite-branches>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"BackEnd\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </favorite-branches>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;duckpop&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;git@github.com:oxSTERBENxo/Challenge-Up-App.git&quot;,\r\n    &quot;accountId&quot;: &quot;0b4f0493-9abe-469a-bce9-4214763e9055&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2yYI8rXaHXt8hI0FG4C51jmDXXX\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Unnamed.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"BackEnd\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/blaze/IdeaProjects/Challenge-Up-App/BackEnd\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"vcs.Git\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration>C:\\Users\\blaze\\AppData\\Roaming\\Subversion</configuration>\r\n    <option name=\"sshConnectionType\" value=\"PRIVATE_KEY\" />\r\n    <option name=\"sshExecutablePath\" value=\"C:\\Users\\blaze\\.ssh\\ImportantKey\" />\r\n    <option name=\"sshUserName\" value=\"duckpop\" />\r\n    <option name=\"sshPrivateKeyPath\" value=\"C:\\Users\\blaze\\.ssh\\ImportantKey\" />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"61cf0d3e-2ed9-42f1-b864-71907b30445b\" name=\"Changes\" comment=\"\" />\r\n      <created>1750004923239</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1750004923239</updated>\r\n      <workItem from=\"1750004924370\" duration=\"1895000\" />\r\n      <workItem from=\"1750107091689\" duration=\"290000\" />\r\n      <workItem from=\"1750775474127\" duration=\"290000\" />\r\n      <workItem from=\"1750775770053\" duration=\"79000\" />\r\n      <workItem from=\"1750775855665\" duration=\"1403000\" />\r\n      <workItem from=\"1750777269101\" duration=\"1223000\" />\r\n      <workItem from=\"1750778539272\" duration=\"681000\" />\r\n      <workItem from=\"1750779344067\" duration=\"152000\" />\r\n      <workItem from=\"1750779503298\" duration=\"156000\" />\r\n      <workItem from=\"1750779671469\" duration=\"105000\" />\r\n      <workItem from=\"1750779782691\" duration=\"383000\" />\r\n      <workItem from=\"1750780173823\" duration=\"36000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/../.idea/workspace.xml b/../.idea/workspace.xml
+--- a/../.idea/workspace.xml	(revision 614d8317692403731ab782e71a87e9d07b5b3c4f)
++++ b/../.idea/workspace.xml	(date 1751397426683)
+@@ -5,7 +5,6 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="61cf0d3e-2ed9-42f1-b864-71907b30445b" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -68,26 +67,46 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.Unnamed.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "BackEnd",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "C:/Users/blaze/IdeaProjects/Challenge-Up-App/BackEnd",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Project",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.2",
+-    "settings.editor.selected.configurable": "vcs.Git",
+-    "vue.rearranger.settings.migration": "true"
+-  }
+-}]]></component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;#1 on BackEnd&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/blaze/Desktop&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  }
++}</component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\blaze\Desktop" />
++      <recent name="C:\Users\blaze\IdeaProjects" />
++    </key>
++  </component>
++  <component name="RunManager">
++    <configuration default="true" type="JetRunConfigurationType">
++      <module name="Challenge-Up-App" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
++      <module name="Challenge-Up-App" />
++      <option name="filePath" />
++      <method v="2" />
++    </configuration>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -123,6 +142,10 @@
+       <workItem from="1750779671469" duration="105000" />
+       <workItem from="1750779782691" duration="383000" />
+       <workItem from="1750780173823" duration="36000" />
++      <workItem from="1751396469658" duration="20000" />
++      <workItem from="1751396646296" duration="5000" />
++      <workItem from="1751396717037" duration="380000" />
++      <workItem from="1751397128735" duration="297000" />
+     </task>
+     <servers />
+   </component>
+Index: ../BackEnd/src/main/java/org/example/Files/TaskFile.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\"ToDo\":\"Take a day trip to a nearby city\",\"completedAt\":\"1970-01-01\",\"PointsAmount\":10}
+===================================================================
+diff --git a/../BackEnd/src/main/java/org/example/Files/TaskFile.json b/../BackEnd/src/main/java/org/example/Files/TaskFile.json
+--- a/../BackEnd/src/main/java/org/example/Files/TaskFile.json	(revision 614d8317692403731ab782e71a87e9d07b5b3c4f)
++++ b/../BackEnd/src/main/java/org/example/Files/TaskFile.json	(date 1751486744067)
+@@ -1,1 +1,1 @@
+-{"ToDo":"Take a day trip to a nearby city","completedAt":"1970-01-01","PointsAmount":10}
+\ No newline at end of file
++{"ToDo":"Cook a new recipe","completedAt":"1970-01-01","PointsAmount":10}
+\ No newline at end of file
+Index: ../BackEnd/src/main/java/org/example/Files/TimeFile.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>2025-07-01
+===================================================================
+diff --git a/../BackEnd/src/main/java/org/example/Files/TimeFile.txt b/../BackEnd/src/main/java/org/example/Files/TimeFile.txt
+--- a/../BackEnd/src/main/java/org/example/Files/TimeFile.txt	(revision 614d8317692403731ab782e71a87e9d07b5b3c4f)
++++ b/../BackEnd/src/main/java/org/example/Files/TimeFile.txt	(date 1751486744067)
+@@ -1,1 +1,1 @@
+-2025-07-01
+\ No newline at end of file
++2025-07-02
+\ No newline at end of file
