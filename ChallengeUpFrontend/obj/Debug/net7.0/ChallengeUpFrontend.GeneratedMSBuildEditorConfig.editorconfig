@@ -1,4 +1,8 @@
 is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
 build_property.TargetFramework = net7.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -9,53 +13,57 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = ChallengeUpFrontend
 build_property.RootNamespace = ChallengeUpFrontend
-build_property.ProjectDir = C:\Users\evakn\RiderProjects\ChallengeUpFrontend\ChallengeUpFrontend\
+build_property.ProjectDir = C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\evakn\RiderProjects\ChallengeUpFrontend\ChallengeUpFrontend
+build_property.MSBuildProjectDirectory = C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 7.0
+build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/evakn/RiderProjects/ChallengeUpFrontend/ChallengeUpFrontend/App.razor]
+[C:/Users/blaze/IdeaProjects/Challenge-Up-App/ChallengeUpFrontend/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/evakn/RiderProjects/ChallengeUpFrontend/ChallengeUpFrontend/Pages/History.razor]
+[C:/Users/blaze/IdeaProjects/Challenge-Up-App/ChallengeUpFrontend/Pages/History.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGlzdG9yeS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/evakn/RiderProjects/ChallengeUpFrontend/ChallengeUpFrontend/Pages/Home.razor]
+[C:/Users/blaze/IdeaProjects/Challenge-Up-App/ChallengeUpFrontend/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/evakn/RiderProjects/ChallengeUpFrontend/ChallengeUpFrontend/Pages/Login.razor]
+[C:/Users/blaze/IdeaProjects/Challenge-Up-App/ChallengeUpFrontend/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/evakn/RiderProjects/ChallengeUpFrontend/ChallengeUpFrontend/Pages/Profile.razor]
+[C:/Users/blaze/IdeaProjects/Challenge-Up-App/ChallengeUpFrontend/Pages/Profile.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/evakn/RiderProjects/ChallengeUpFrontend/ChallengeUpFrontend/Pages/RedirectToLogin.razor]
+[C:/Users/blaze/IdeaProjects/Challenge-Up-App/ChallengeUpFrontend/Pages/RedirectToLogin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVkaXJlY3RUb0xvZ2luLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/evakn/RiderProjects/ChallengeUpFrontend/ChallengeUpFrontend/Pages/Shop.razor]
+[C:/Users/blaze/IdeaProjects/Challenge-Up-App/ChallengeUpFrontend/Pages/Shop.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvcC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/evakn/RiderProjects/ChallengeUpFrontend/ChallengeUpFrontend/Shared/SurveyPrompt.razor]
+[C:/Users/blaze/IdeaProjects/Challenge-Up-App/ChallengeUpFrontend/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/evakn/RiderProjects/ChallengeUpFrontend/ChallengeUpFrontend/_Imports.razor]
+[C:/Users/blaze/IdeaProjects/Challenge-Up-App/ChallengeUpFrontend/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/evakn/RiderProjects/ChallengeUpFrontend/ChallengeUpFrontend/Shared/MainLayout.razor]
+[C:/Users/blaze/IdeaProjects/Challenge-Up-App/ChallengeUpFrontend/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-01avughc47
 
-[C:/Users/evakn/RiderProjects/ChallengeUpFrontend/ChallengeUpFrontend/Shared/NavMenu.razor]
+[C:/Users/blaze/IdeaProjects/Challenge-Up-App/ChallengeUpFrontend/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-vzyl0o8g2c

@@ -1,19 +1,19 @@
-using ChallengeUpFrontend.Models;
-namespace ChallengeUpFrontend.Services
-
-{
-    public class MockChallengeService
-    {
-        public Task<List<Challenge>> GetDailyChallengesAsync()
-        {
-            var list = new List<Challenge>
-            {
-                new Challenge { Id = 1, Text = "Do 10 push-ups", Category = "Fitness", Points = 10 },
-                new Challenge { Id = 2, Text = "Drink 2 glasses of water", Category = "Health", Points = 5 },
-                new Challenge { Id = 3, Text = "Write 3 goals for today", Category = "Productivity", Points = 7 }
-            };
-
-            return Task.FromResult(list);
-        }
-    }
-}
+//using ChallengeUpFrontend.Models;
+//namespace ChallengeUpFrontend.Services
+//
+//{
+//    public class MockChallengeService
+//    {
+//        public Task<List<Challenge>> GetDailyChallengesAsync()
+//        {
+//            var list = new List<Challenge>
+//            {
+//                new Challenge { ToDo = "Do 10 push-ups",completedAt = "1970-01-01",PointsAmount = "10", Category = "Fitness"},
+//                new Challenge { Text = "Drink 2 glasses of water",completedAt = "1970-01-01",PointsAmount = "10", Category = "Health"},
+//                new Challenge { Text = "Write 3 goals for today",,completedAt = "1970-01-01",PointsAmount = "10",, Category = "Productivity"}
+//            };
+//
+//            return Task.FromResult(list);
+//        }
+//    }
+//}

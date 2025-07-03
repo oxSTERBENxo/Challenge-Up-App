@@ -1,0 +1,240 @@
+Index: ../.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"61cf0d3e-2ed9-42f1-b864-71907b30445b\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/material_theme_project_new.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/material_theme_project_new.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <excluded-from-favorite>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"main\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </excluded-from-favorite>\r\n    <favorite-branches>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"BackEnd\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </favorite-branches>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;duckpop&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;git@github.com:oxSTERBENxo/Challenge-Up-App.git&quot;,\r\n    &quot;accountId&quot;: &quot;0b4f0493-9abe-469a-bce9-4214763e9055&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2yYI8rXaHXt8hI0FG4C51jmDXXX\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Unnamed.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"BackEnd\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/blaze/IdeaProjects/Challenge-Up-App/BackEnd\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"vcs.Git\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration>C:\\Users\\blaze\\AppData\\Roaming\\Subversion</configuration>\r\n    <option name=\"sshConnectionType\" value=\"PRIVATE_KEY\" />\r\n    <option name=\"sshExecutablePath\" value=\"C:\\Users\\blaze\\.ssh\\ImportantKey\" />\r\n    <option name=\"sshUserName\" value=\"duckpop\" />\r\n    <option name=\"sshPrivateKeyPath\" value=\"C:\\Users\\blaze\\.ssh\\ImportantKey\" />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"61cf0d3e-2ed9-42f1-b864-71907b30445b\" name=\"Changes\" comment=\"\" />\r\n      <created>1750004923239</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1750004923239</updated>\r\n      <workItem from=\"1750004924370\" duration=\"1895000\" />\r\n      <workItem from=\"1750107091689\" duration=\"290000\" />\r\n      <workItem from=\"1750775474127\" duration=\"290000\" />\r\n      <workItem from=\"1750775770053\" duration=\"79000\" />\r\n      <workItem from=\"1750775855665\" duration=\"1403000\" />\r\n      <workItem from=\"1750777269101\" duration=\"1223000\" />\r\n      <workItem from=\"1750778539272\" duration=\"681000\" />\r\n      <workItem from=\"1750779344067\" duration=\"152000\" />\r\n      <workItem from=\"1750779503298\" duration=\"156000\" />\r\n      <workItem from=\"1750779671469\" duration=\"105000\" />\r\n      <workItem from=\"1750779782691\" duration=\"383000\" />\r\n      <workItem from=\"1750780173823\" duration=\"36000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/../.idea/workspace.xml b/../.idea/workspace.xml
+--- a/../.idea/workspace.xml	(revision 4dc592b2f5581261e9fbdf2f439f4773e17a27d1)
++++ b/../.idea/workspace.xml	(date 1751051695934)
+@@ -5,7 +5,7 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="61cf0d3e-2ed9-42f1-b864-71907b30445b" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -70,9 +70,11 @@
+   </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
++    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "Application.Unnamed.executor": "Run",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.git.unshallow": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "git-widget-placeholder": "BackEnd",
+     "kotlin-language-version-configured": "true",
+     "last_opened_file_path": "C:/Users/blaze/IdeaProjects/Challenge-Up-App/BackEnd",
+@@ -128,6 +130,9 @@
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <option name="LAST_COMMIT_MESSAGE" value="" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
+Index: ../BackEnd/src/main/java/org/example/Worker.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport com.google.gson.Gson;\r\n\r\nimport java.io.*;\r\nimport java.net.Socket;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.concurrent.locks.Lock;\r\n\r\npublic class Worker extends Thread {\r\n    private Socket socket;\r\n\r\n    private List<ClientData> Clients;\r\n    private List<PlayerStatData> PlayerStats;\r\n    private String Task;\r\n    private Lock CLientLock;\r\n    private Lock PlayerLock;\r\n\r\n    public Worker(Socket socket, List<ClientData> Clients, List<PlayerStatData> PlayerStats, String Task, Lock ClientLock, Lock PlayerLock) {\r\n        this.socket = socket;\r\n\r\n        this.Clients = Clients;\r\n        this.PlayerStats = PlayerStats;\r\n        this.Task = Task;\r\n\r\n        this.PlayerLock = PlayerLock;\r\n        this.CLientLock = ClientLock;\r\n    }\r\n\r\n    private boolean IsUsernameUsed(String name){\r\n        for(ClientData cd : Clients){\r\n            if(cd.getUsername().equals(name)){\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    private boolean IsPasswordStrong(String password, String name){\r\n        if(password.length() < 6 || !password.contains(\".*[!@#$%^&*].*\") || password.equals(name)){\r\n            return false;\r\n        }\r\n        return true;\r\n    }\r\n\r\n    private boolean IsEmailRight(String Email){\r\n        if(Email.length() < 6 || !Email.contains(\"@\")){\r\n            return false;\r\n        }\r\n        return true;\r\n    }\r\n\r\n    @Override\r\n    public void run() {\r\n        BufferedReader in = null;\r\n        BufferedWriter out = null;\r\n\r\n\r\n        try {\r\n            in = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));\r\n            out = new BufferedWriter(new OutputStreamWriter(this.socket.getOutputStream()));\r\n\r\n            String line;\r\n            Gson gson = new Gson();\r\n\r\n            while ((line = in.readLine()) != null) {\r\n                Command cmd = gson.fromJson(line, Command.class);\r\n                System.out.println(cmd.getCommand());\r\n\r\n                switch (cmd.getCommand()) {\r\n\r\n\r\n//                  AccountManagement\r\n                    //Important: EXTRA(USERNAME;EMAIL;PASSWORD)\r\n                    case \"CreateAccount\":{\r\n                        CLientLock.lock();\r\n                        String[] Extra = cmd.getExtra().split(\";\");\r\n\r\n                        ClientData CD = new ClientData(Extra[0], Extra[1], Extra[2]);\r\n                        PlayerStatData PSD = new PlayerStatData(Extra[0],0,0);\r\n                        if(Clients.contains(CD)) {\r\n                            out.write(\"Error: Client already exists\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                        } else if (IsUsernameUsed(Extra[0])) {\r\n                            out.write(\"Error: Username is already taken\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                        } else if (IsPasswordStrong(Extra[2], Extra[0])) {\r\n                            out.write(\"Error: Invalid password\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                        } else if (IsEmailRight(Extra[1])) {\r\n                            out.write(\"Error: Invalid email\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                        } else {\r\n                            Clients.add(CD);\r\n                            PlayerStats.add(PSD);\r\n                            out.write(\"Client created account\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                            DataManagment.saveList(PlayerStats, \"\\\"src/main/java/org/example/Files/PlayerStats.json\");\r\n                            DataManagment.saveList(Clients, \"src/main/java/org/example/Files/Clients.json\");\r\n                        }\r\n                        CLientLock.unlock();\r\n                        break;\r\n                    }\r\n                    //Important: EXTRA(USERNAME;EMAIL;PASSWORD)\r\n                    case \"RemoveAccount\":{\r\n                        CLientLock.lock();\r\n                        String[] Extra = cmd.getExtra().split(\";\");\r\n\r\n                        ClientData CD = new ClientData(Extra[0], Extra[1], Extra[2]);\r\n                        PlayerStatData PSD = new PlayerStatData(Extra[0],0,0);\r\n                        if(Clients.contains(CD)) {\r\n                            Clients.remove(CD);\r\n                            PlayerStats.remove(PSD);\r\n                            out.write(\"Successfully removed account\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                            DataManagment.saveList(Clients, \"src/main/java/org/example/Files/Clients.json\");\r\n                            DataManagment.saveList(PlayerStats, \"\\\"src/main/java/org/example/Files/PlayerStats.json\");\r\n                        }else{\r\n                            out.write(\"Error: Client does not exist\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                        }\r\n                        CLientLock.unlock();\r\n                        break;\r\n                    }\r\n                    //Important: EXTRA(USERNAME;EMAIL;PASSWORD)\r\n                    case \"Login\":{\r\n                        CLientLock.lock();\r\n                        String[] Extra = cmd.getExtra().split(\";\");\r\n\r\n                        ClientData CD = new ClientData(Extra[0], Extra[1], Extra[2]);\r\n                        if(Clients.contains(CD)) {\r\n                            out.write(\"successfully logged in\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                        }else {\r\n                            out.write(\"Error: Incorrect username or password\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                        }\r\n                        CLientLock.unlock();\r\n                        break;\r\n                    }\r\n                    //Important: EXTRA(USERNAME;EMAIL;PASSWORD;NEW USERNAME)\r\n                    case \"EditAccountName\":{\r\n                        CLientLock.lock();\r\n                        String[] Extra = cmd.getExtra().split(\";\");\r\n                        ClientData CD_old = new ClientData(Extra[0], Extra[1], Extra[2]);\r\n                        ClientData CD_new = new ClientData(Extra[3], Extra[1], Extra[2]);\r\n\r\n                        PlayerStatData PSD= null;\r\n\r\n                        for(PlayerStatData psd : PlayerStats) {\r\n                            if(psd.getUsername().equals(Extra[0])) {\r\n                                PSD = psd;\r\n                                PlayerStats.remove(psd);\r\n                                break;\r\n                            }\r\n                        }\r\n\r\n                        if (PSD != null) {\r\n                            PlayerStatData PSD_new = new PlayerStatData(Extra[3],PSD.getPoints(),PSD.getDays());\r\n                            if(Clients.contains(CD_old)) {\r\n                                Clients.remove(CD_old);\r\n                                Clients.add(CD_new);\r\n                                PlayerStats.add(PSD_new);\r\n                                out.write(\"Successfully edited account\");\r\n                                out.newLine();\r\n                                out.flush();\r\n                                DataManagment.saveList(Clients, \"src/main/java/org/example/Files/Clients.json\");\r\n                                DataManagment.saveList(PlayerStats, \"\\\"src/main/java/org/example/Files/PlayerStats.json\");\r\n                            }else {\r\n                                out.write(\"Error: Account does not exist\");\r\n                            }\r\n                        }else{\r\n                            out.write(\"Error: Incorrect username\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                        }\r\n\r\n\r\n                        CLientLock.unlock();\r\n                        break;\r\n                    }\r\n                    //Important: EXTRA(USERNAME;EMAIL;PASSWORD;NEW PASSWORD)\r\n                    case \"EditAccountPassword\":{\r\n                        CLientLock.lock();\r\n                        String[] Extra = cmd.getExtra().split(\";\");\r\n\r\n                        String NewPassword = cmd.getExtra();\r\n                        ClientData CD_old = new ClientData(Extra[0], Extra[1], Extra[2]);\r\n                        ClientData CD_new = new ClientData(Extra[0], Extra[1], Extra[3]);\r\n                        if(Clients.contains(CD_old)) {\r\n                            Clients.remove(CD_old);\r\n                            Clients.add(CD_new);\r\n                            out.write(\"Successfully edited account\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                            DataManagment.saveList(Clients, \"src/main/java/org/example/Files/Clients.json\");\r\n                        }else {\r\n                            out.write(\"Error: Account does not exist\");\r\n                        }\r\n                        DataManagment.saveList(Clients, \"src/main/java/org/example/Files/Clients.json\");\r\n                        CLientLock.unlock();\r\n                        break;\r\n                    }\r\n                    //Important: EXTRA(USERNAME;EMAIL;PASSWORD;NEW EMAIL)\r\n                    case \"EditAccountEmail\":{\r\n                        CLientLock.lock();\r\n                        String[] Extra = cmd.getExtra().split(\";\");\r\n\r\n                        String NewEmail = cmd.getExtra();\r\n                        ClientData CD_old = new ClientData(Extra[0], Extra[1], Extra[2]);\r\n                        ClientData CD_new = new ClientData(Extra[0], Extra[3], Extra[2]);\r\n                        if(Clients.contains(CD_old)) {\r\n                            Clients.remove(CD_old);\r\n                            Clients.add(CD_new);\r\n                            out.write(\"Successfully edited account\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                            DataManagment.saveList(Clients, \"src/main/java/org/example/Files/Clients.json\");\r\n                        }else {\r\n                            out.write(\"Error: Account does not exist\");\r\n                        }\r\n                        DataManagment.saveList(Clients, \"src/main/java/org/example/Files/Clients.json\");\r\n                        CLientLock.unlock();\r\n                        break;\r\n                    }\r\n\r\n\r\n//                  StatsManagement\r\n                    //Important: NONE\r\n                    case \"GetTop10\":{\r\n                        PlayerLock.lock();\r\n                        List<PlayerStatData> temp = PlayerStats;\r\n                        temp.sort((a,b) -> Integer.compare(b.getPoints(), a.getPoints()));\r\n                        List<PlayerStatData> top10 = new ArrayList<>(temp.subList(0, Math.min(PlayerStats.size(), 10)));\r\n                        out.write(gson.toJson(top10));\r\n                        out.newLine();\r\n                        out.flush();\r\n                        PlayerLock.unlock();\r\n                        break;\r\n                    }\r\n\r\n\r\n//                  Points Managment\r\n                    //Important: EXTRA(USERNAME)\r\n                    case \"CompletedTask\":{\r\n                        PlayerLock.lock();\r\n                        String[] Extra = cmd.getExtra().split(\";\");\r\n\r\n                        PlayerStatData PSD= null;\r\n\r\n                        for(PlayerStatData psd : PlayerStats) {\r\n                            if(psd.getUsername().equals(Extra[0])) {\r\n                                PSD = psd;\r\n                                PlayerStats.remove(psd);\r\n                                break;\r\n                            }\r\n                        }\r\n\r\n                        if(PSD != null) {\r\n                            PSD.setCompleted(true);\r\n                            PlayerStats.add(PSD);\r\n                            out.write(\"Task successfully marked completed\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                        }else {\r\n                            out.write(\"Error: Account does not exist\");\r\n                            out.newLine();\r\n                            out.flush();\r\n                        }\r\n                        PlayerLock.unlock();\r\n                        break;\r\n                    }\r\n                }\r\n            }\r\n        } catch (IOException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/../BackEnd/src/main/java/org/example/Worker.java b/../BackEnd/src/main/java/org/example/Worker.java
+--- a/../BackEnd/src/main/java/org/example/Worker.java	(revision 4dc592b2f5581261e9fbdf2f439f4773e17a27d1)
++++ b/../BackEnd/src/main/java/org/example/Worker.java	(date 1751054102292)
+@@ -280,6 +280,35 @@
+                         PlayerLock.unlock();
+                         break;
+                     }
++                    case "PayForReset":{
++                        PlayerLock.lock();
++                        String[] Extra = cmd.getExtra().split(";");
++
++                        PlayerStatData PSD= null;
++
++                        for(PlayerStatData psd : PlayerStats) {
++                            if(psd.getUsername().equals(Extra[0])) {
++                                PSD = psd;
++                                PlayerStats.remove(psd);
++                                break;
++                            }
++                        }
++
++                        if(PSD != null) {
++                            int value = PSD.PayForReset();
++                            if(value > 0) {
++                                out.write("Success" + value);
++                                out.newLine();
++                                out.flush();
++                            }else{
++                                out.write("Error: Not Gems points to pay for reset");
++                                out.newLine();
++                                out.flush();
++                            }
++                        }
++                        PlayerLock.unlock();
++                        break;
++                    }
+                 }
+             }
+         } catch (IOException e) {
+Index: ../BackEnd/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$/..\" vcs=\"Git\" />\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/../BackEnd/.idea/vcs.xml b/../BackEnd/.idea/vcs.xml
+--- a/../BackEnd/.idea/vcs.xml	(revision 4dc592b2f5581261e9fbdf2f439f4773e17a27d1)
++++ b/../BackEnd/.idea/vcs.xml	(date 1751051792560)
+@@ -2,6 +2,5 @@
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: ../BackEnd/src/main/java/org/example/PlayerStatData.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\npublic class PlayerStatData {\r\n    private String Username;\r\n    private Integer Points;\r\n    private Integer Days;\r\n    private boolean Compleated;\r\n\r\n    public PlayerStatData(String username, Integer points, Integer days) {\r\n        this.Username = username;\r\n        this.Points = points;\r\n        this.Days = days;\r\n        this.Compleated = false;\r\n    }\r\n\r\n    public void UpdateValue() {\r\n        if(isCompleted()){\r\n            int EffectiveStreak = Math.max(getDays(), 10);\r\n            int Points = 50 + ((int)Math.pow(EffectiveStreak, 1.5) * 5);\r\n            setPoints(getPoints() + Points);\r\n            setDays(getDays() + 1);\r\n        }else {\r\n            setDays(0);\r\n            setPoints(0);\r\n        }\r\n    }\r\n\r\n    public String getUsername() {\r\n        return Username;\r\n    }\r\n    public Integer getPoints() {\r\n        return Points;\r\n    }\r\n    public void setPoints(Integer points) {\r\n        Points = points;\r\n    }\r\n    public Integer getDays() {\r\n        return Days;\r\n    }\r\n    public void setDays(Integer days) {\r\n        Days = days;\r\n    }\r\n    public boolean isCompleted() {\r\n        return Compleated;\r\n    }\r\n    public void setCompleted(boolean completed) {\r\n        Compleated = completed;\r\n    }\r\n\r\n    @Override\r\n    public boolean equals(Object o) {\r\n        if (this == o) return true;\r\n        if (!(o instanceof PlayerStatData)) return false;\r\n        PlayerStatData that = (PlayerStatData) o;\r\n        return  (Username.equals(that.Username));\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/../BackEnd/src/main/java/org/example/PlayerStatData.java b/../BackEnd/src/main/java/org/example/PlayerStatData.java
+--- a/../BackEnd/src/main/java/org/example/PlayerStatData.java	(revision 4dc592b2f5581261e9fbdf2f439f4773e17a27d1)
++++ b/../BackEnd/src/main/java/org/example/PlayerStatData.java	(date 1751054102309)
+@@ -1,29 +1,82 @@
+ package org.example;
+ 
++import java.util.LinkedList;
++import java.util.List;
++import java.util.Queue;
++
+ public class PlayerStatData {
+     private String Username;
+     private Integer Points;
+     private Integer Days;
++    private Integer Gems;
+     private boolean Compleated;
++    private List<String> CompleatedTasks;
++    private Queue<Boolean> Last7Days;
++
++    // Temporary variables before clearing data
++    private List<String> TempTasks;
++    private Queue<Boolean> Last7DaysTemp;
++    private Integer PointsTemp;
++    private Integer DaysTemp;
+ 
+     public PlayerStatData(String username, Integer points, Integer days) {
+         this.Username = username;
+         this.Points = points;
+         this.Days = days;
++        this.Gems = 100; // Default value for Gems
+         this.Compleated = false;
++        this.CompleatedTasks = new LinkedList<>();
++        this.Last7Days = new LinkedList<>();
++
++        this.TempTasks = new LinkedList<>();
++        this.Last7DaysTemp = new LinkedList<>();
++        this.PointsTemp = points;
++        this.DaysTemp = days;
++
++        for (int i = 0; i < 7; i++) {
++            Last7Days.add(false);
++            Last7DaysTemp.add(false);
++        }
+     }
+ 
+-    public void UpdateValue() {
++    public void UpdateValue(String T) {
+         if(isCompleted()){
+-            int EffectiveStreak = Math.max(getDays(), 10);
++            int EffectiveStreak = Math.min(getDays(), 10);
+             int Points = 50 + ((int)Math.pow(EffectiveStreak, 1.5) * 5);
+             setPoints(getPoints() + Points);
+             setDays(getDays() + 1);
++            CompleatedTasks.add(T);
++            Last7Days.remove();
++            Last7Days.add(true);
++            setCompleted(false);
+         }else {
++            TempTasks = CompleatedTasks;
++            Last7DaysTemp = Last7Days;
++            PointsTemp = getPoints();
++            DaysTemp = getDays();
++            CompleatedTasks.clear();
++            for (int i = 0; i < 7; i++) {
++                Last7Days.remove();
++                Last7Days.add(false);
++            }
++            setPoints(0);
+             setDays(0);
+-            setPoints(0);
+         }
+     }
++
++    public Integer PayForReset() {
++        if(getGems() > 100){
++            setGems(getGems() - 100);
++            CompleatedTasks = TempTasks;
++            Last7Days = Last7DaysTemp;
++            setPoints(PointsTemp);
++            setDays(DaysTemp);
++            return 200;
++        } else {
++            return 0; // Not enough gems to pay for reset
++        }
++
++    }
+ 
+     public String getUsername() {
+         return Username;
+@@ -46,6 +99,12 @@
+     public void setCompleted(boolean completed) {
+         Compleated = completed;
+     }
++    public Integer getGems() {
++        return Gems;
++    }
++    public void setGems(Integer gems) {
++        Gems = gems;
++    }
+ 
+     @Override
+     public boolean equals(Object o) {
+Index: ../BackEnd/src/main/java/org/example/Server.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport java.io.*;\r\nimport java.lang.reflect.Type;\r\nimport java.net.InetAddress;\r\nimport java.net.ServerSocket;\r\nimport java.net.Socket;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.Random;\r\nimport java.util.concurrent.locks.Lock;\r\nimport java.util.concurrent.locks.ReentrantLock;\r\nimport java.time.format.DateTimeFormatter;\r\nimport java.time.LocalDate;\r\n\r\nimport com.google.gson.Gson;\r\nimport com.google.gson.reflect.TypeToken;\r\n\r\npublic class Server extends Thread {\r\n\r\n    private Integer port;\r\n    private String IP;\r\n    private List<ClientData> clients;\r\n    private List<PlayerStatData> PlayerStats;\r\n    private List<Task> Tasks;\r\n    private Lock ClientLock = new ReentrantLock();\r\n    private Lock PlayerLock = new ReentrantLock();\r\n    private Lock TimeLock = new ReentrantLock();\r\n    private Task TT = new Task(\"No Task Assigned\");\r\n\r\n    public Server(Integer port, String IP) {\r\n        this.port = port;\r\n        this.IP = IP;\r\n        clients = new ArrayList<>();\r\n        PlayerStats = new ArrayList<>();\r\n        Tasks = new ArrayList<>();\r\n    }\r\n\r\n    @Override\r\n    public void run() {\r\n        ServerSocket serverSocket = null;\r\n        try {\r\n            serverSocket = new ServerSocket(this.port, 50, InetAddress.getByName(this.IP));\r\n        } catch (IOException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n        File ClientsFile = null;\r\n        File GroupsFile = null;\r\n        File PlayerStatsFile = null;\r\n        File TasksFile = new File(\"src/main/java/org/example/Files/Tasks.json\");\r\n        File TaskFile = null;\r\n        File TimeFile = null;\r\n\r\n\r\n//      check if the clients file exists\r\n        try {\r\n            PlayerStatsFile = new File(\"src/main/java/org/example/Files/PlayerStats.json\");\r\n            if (PlayerStatsFile.createNewFile()) {\r\n                System.out.println(\"File created\");\r\n                FileWriter PlayerStatsFileWriter = new FileWriter(PlayerStatsFile);\r\n                PlayerStatsFileWriter.write(\"[]\");\r\n                PlayerStatsFileWriter.close();\r\n            }\r\n            else {\r\n                System.out.println(\"File already exists\");\r\n            }\r\n        }\r\n        catch (Exception e) {\r\n            System.err.println(e);\r\n        }\r\n\r\n//      check if the PlayerStats file exists\r\n        try {\r\n            ClientsFile = new File(\"src/main/java/org/example/Files/Clients.json\");\r\n            if (ClientsFile.createNewFile()) {\r\n                System.out.println(\"File created\");\r\n                FileWriter ClientsWriter = new FileWriter(ClientsFile);\r\n                ClientsWriter.write(\"[]\");\r\n                ClientsWriter.close();\r\n            }\r\n            else{\r\n                System.out.println(\"File already exists\");\r\n            }\r\n        }\r\n        catch (Exception e) {\r\n            System.err.println(e);\r\n        }\r\n\r\n//      Check if TimeFile Exists\r\n        try {\r\n            TimeFile = new File(\"src/main/java/org/example/Files/TimeFile.txt\");\r\n            if (TimeFile.createNewFile()) {\r\n                System.out.println(\"File created\");\r\n                FileWriter TimeFIleWriter = new FileWriter(TimeFile);\r\n                TimeFIleWriter.write(String.valueOf(LocalDate.now()));\r\n                TimeFIleWriter.close();\r\n            }\r\n            else{\r\n                System.out.println(\"File already exists\");\r\n            }\r\n        }\r\n        catch (Exception e) {\r\n            System.err.println(e);\r\n        }\r\n\r\n\r\n        Gson gson = new Gson();\r\n//        Load Clients\r\n        if (ClientsFile.length() > 2){\r\n            try(Reader UserReader = new FileReader(\"src/main/java/org/example/Files/Clients.json\")) {\r\n                Type clientListType = new TypeToken<List<ClientData>>(){}.getType();\r\n                List<ClientData> CDList = gson.fromJson(UserReader, clientListType);\r\n                if (CDList != null) clients.addAll(CDList);\r\n            }catch (Exception e) {\r\n                System.err.println(e);\r\n            }\r\n        }else{\r\n            System.out.println(\"No Clients found\");\r\n        }\r\n//        Load PlayerStat\r\n        if (PlayerStatsFile.length() > 2){\r\n            try(Reader PlayerStatsReader = new FileReader(\"src/main/java/org/example/Files/PlayerStats.json\")) {\r\n                Type PlayerStatsType = new TypeToken<List<PlayerStatData>>(){}.getType();\r\n                List<PlayerStatData> CDList = gson.fromJson(PlayerStatsReader, PlayerStatsType);\r\n                if (CDList != null) PlayerStats.addAll(CDList);\r\n            }catch (Exception e) {\r\n                System.err.println(e);\r\n            }\r\n        }else{\r\n            System.out.println(\"No PlayerStats found\");\r\n        }\r\n//        Load Tasks\r\n        if (TasksFile.length() > 2){\r\n            try(Reader TasksReader = new FileReader(\"src/main/java/org/example/Files/Tasks.json\")) {\r\n                Type TasksType = new TypeToken<List<Task>>(){}.getType();\r\n                List<Task> CDList = gson.fromJson(TasksReader, TasksType);\r\n                if (CDList != null) Tasks.addAll(CDList);\r\n            }catch (Exception e) {\r\n                System.err.println(e);\r\n            }\r\n        }else{\r\n            System.out.println(\"No Tasks found\");\r\n        }\r\n\r\n\r\n        System.out.println(\"Server started\");\r\n        System.out.println(clients.size() + \" clients\");\r\n        System.out.println(PlayerStats.size() + \" PlayerStats\");\r\n\r\n//      Check if TaskFile Exists\r\n        try {\r\n            TaskFile = new File(\"src/main/java/org/example/Files/TaskFile.txt\");\r\n            if (TaskFile.createNewFile()) {\r\n                System.out.println(\"File created\");\r\n                FileWriter TaskFIleWriter = new FileWriter(TaskFile);\r\n                String T = \"No Set Task\";\r\n                TaskFIleWriter.write(T);\r\n                TaskFIleWriter.close();\r\n            }\r\n            else{\r\n                System.out.println(\"File already exists\");\r\n            }\r\n        }\r\n        catch (Exception e) {\r\n            System.err.println(e);\r\n        }\r\n\r\n        // Initialize TT with a default task\r\n        if (Tasks.size() > 0) {\r\n            TT = new Task();\r\n            TT.setToDo(Tasks.get(0).getToDo());  // Set an initial value\r\n        }\r\n\r\n        File finalTimeFile = TimeFile;\r\n        File finalTaskFile = TaskFile;\r\n\r\n        Thread TimeCheck = new Thread(() -> {\r\n            while (true) {\r\n                try {\r\n                    Thread.sleep(30 * 60* 1000); // Check every 10 minutes\r\n                } catch (InterruptedException e) {\r\n                    e.printStackTrace();\r\n                }\r\n\r\n                try {\r\n                    // Step 1: Read last written date\r\n                    LocalDate lastDate;\r\n                    try (BufferedReader br = new BufferedReader(new FileReader(finalTimeFile))) {\r\n                        String line = br.readLine();\r\n\r\n                        if (line == null || line.isBlank()) {\r\n                            // File is empty — assume today as default\r\n                            lastDate = LocalDate.now();\r\n                            try (FileWriter writer = new FileWriter(finalTimeFile)) {\r\n                                writer.write(lastDate.toString());\r\n                            }\r\n                        } else {\r\n                            lastDate = LocalDate.parse(line, DateTimeFormatter.ISO_LOCAL_DATE);\r\n                        }\r\n                    }\r\n\r\n\r\n                    // Step 2: Check current date\r\n                    LocalDate currentDate = LocalDate.now();\r\n                    if (currentDate.isAfter(lastDate)) {\r\n                        // Step 3: Update time file\r\n                        try (FileWriter writer = new FileWriter(finalTimeFile)) {\r\n                            writer.write(currentDate.toString());\r\n                        }\r\n\r\n                        // Step 4: Pick random task and update\r\n                        Random rand = new Random();\r\n                        if (!Tasks.isEmpty()) {\r\n                            int RandomIndex = rand.nextInt(Tasks.size());\r\n                            Task randomTask = Tasks.get(RandomIndex);\r\n                            System.out.println(randomTask.getToDo());\r\n                            if (randomTask != null && randomTask.getToDo() != null) {\r\n                                String T = randomTask.getToDo();\r\n                                TT.setToDo(T);\r\n\r\n                                try (FileWriter TaskWriter = new FileWriter(finalTaskFile)) {\r\n                                    TaskWriter.write(T);\r\n                                } catch (IOException e) {\r\n                                    e.printStackTrace();\r\n                                }\r\n                            } else {\r\n                                System.err.println(\"Random task or task content was null.\");\r\n                            }\r\n                        } else {\r\n                            System.err.println(\"No tasks available in the list.\");\r\n                        }\r\n\r\n                    } else {\r\n                        System.out.println(\"Date unchanged. Still \" + lastDate);\r\n                    }\r\n\r\n                } catch (Exception e) {\r\n                    e.printStackTrace();\r\n                }\r\n            }\r\n        });\r\n\r\n        TimeCheck.start();\r\n\r\n\r\n        while (true){\r\n            Socket clientSocket = null;\r\n            try {\r\n                clientSocket = serverSocket.accept();\r\n            } catch (IOException e) {\r\n                throw new RuntimeException(e);\r\n            }\r\n\r\n            Worker W = new Worker(clientSocket,this.clients,this.PlayerStats,TT.getToDo(),this.ClientLock,this.PlayerLock);\r\n            W.start();\r\n            System.out.println(\"Client connected\");\r\n\r\n        }\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        String IP = \"127.0.0.1\";\r\n        int port = 8080;\r\n        Server server = new Server(port, IP);\r\n        server.start();\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/../BackEnd/src/main/java/org/example/Server.java b/../BackEnd/src/main/java/org/example/Server.java
+--- a/../BackEnd/src/main/java/org/example/Server.java	(revision 4dc592b2f5581261e9fbdf2f439f4773e17a27d1)
++++ b/../BackEnd/src/main/java/org/example/Server.java	(date 1751054102302)
+@@ -203,12 +203,12 @@
+                     // Step 2: Check current date
+                     LocalDate currentDate = LocalDate.now();
+                     if (currentDate.isAfter(lastDate)) {
+-                        // Step 3: Update time file
++                        // Step 3.1: Update time file
+                         try (FileWriter writer = new FileWriter(finalTimeFile)) {
+                             writer.write(currentDate.toString());
+                         }
+ 
+-                        // Step 4: Pick random task and update
++                        // Step 3.2: Pick random task and update
+                         Random rand = new Random();
+                         if (!Tasks.isEmpty()) {
+                             int RandomIndex = rand.nextInt(Tasks.size());
+@@ -230,6 +230,10 @@
+                             System.err.println("No tasks available in the list.");
+                         }
+ 
++                        //Step 4.1: Update PlayerStats
++                        for (PlayerStatData psd : PlayerStats) {
++                            psd.UpdateValue(TT.getToDo());
++                        }
+                     } else {
+                         System.out.println("Date unchanged. Still " + lastDate);
+                     }

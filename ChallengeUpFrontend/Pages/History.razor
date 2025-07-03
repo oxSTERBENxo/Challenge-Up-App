@@ -1,4 +1,9 @@
 @page "/history"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@using ChallengeUpFrontend.Models
+@using System.Text.Json
 
 <div class="history-container text-center">
     <h2 class="history-title mb-4">Challenge History</h2>
@@ -9,8 +14,8 @@
             @foreach (var challenge in completedChallenges)
             {
                 <div class="history-card">
-                    <h5>@challenge.Title</h5>
-                    <p class="text-muted">Completed on @challenge.Date.ToString("MMM dd, yyyy")</p>
+                    <h5>@challenge.ToDo</h5>
+                    <p class="text-muted">Completed on @challenge.completedAt</p>
                 </div>
             }
         </div>
@@ -22,16 +27,21 @@
 </div>
 
 @code {
-    public class ChallengeRecord
+    private UserStats? stats;
+    private List<Challenge> completedChallenges = new();
+    
+    protected override async Task OnParametersSetAsync()
     {
-        public string Title { get; set; }
-        public DateTime Date { get; set; }
-    }
+        string StatsJson = await JS.InvokeAsync<string>("sessionStorage.getItem", "UserStats");
+        stats = JsonSerializer.Deserialize<UserStats>(StatsJson);
 
-    List<ChallengeRecord> completedChallenges = new()
-    {
-        new ChallengeRecord { Title = "Drink 2L of Water", Date = DateTime.Now.AddDays(-1) },
-        new ChallengeRecord { Title = "Learn 5 new words", Date = DateTime.Now.AddDays(-2) },
-        new ChallengeRecord { Title = "10 pushups", Date = DateTime.Now.AddDays(-3) }
-    };
+        if (stats != null && stats.CompletedTasks != null)
+        {
+            completedChallenges = stats.CompletedTasks;
+        }
+        else
+        {
+            completedChallenges.Clear();
+        }
+    }
 }

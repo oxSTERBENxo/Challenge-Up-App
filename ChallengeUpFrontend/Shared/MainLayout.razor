@@ -1,51 +1,83 @@
 ﻿@inherits LayoutComponentBase
-@using ChallengeUpFrontend.Services
 @using ChallengeUpFrontend.Models
-@inject MockUserStatsService UserStatsService
 @inject NavigationManager Navigation
 @inject IJSRuntime JS
+@using System.Text.Json
+@inject HttpClient Http
 
 @code {
+	private PlayerLogin? Login;	
     private UserStats? stats;
-    private List<DayStreak> last7Days = new();
+
     private bool ShouldHideLayout => Navigation.Uri.Contains("/login");
     private bool showStreakLostPopup = false;
 
+	private string? error;
+    private System.Threading.Timer? timer;
+
     protected override async Task OnInitializedAsync()
     {
-        stats = await UserStatsService.GetUserStatsAsync();
+     	string json = await WaitForSessionStorageAsync("LoginInfo");
+		Login = JsonSerializer.Deserialize<PlayerLogin>(json);
 
-        // Just for demo. Replace with real logic for Completed
-        var today = DateTime.Today;
-        last7Days = Enumerable.Range(0, 7)
-            .Select(i =>
-            {
-                var date = today.AddDays(-6 + i);
-                return new DayStreak
-                {
-                    Date = date,
-                    DayShort = date.ToString("ddd")[0].ToString(),
-                    Completed = Random.Shared.Next(2) == 1 // Replace with real check
-                };
-            })
-            .ToList();
-
-        // Simulated streak lost flag — in future this would come from API/service
-        var streakLost = await JS.InvokeAsync<string>("localStorage.getItem", "streakLost");
-
-        if (streakLost == "true")
+		timer = new System.Threading.Timer(async _ =>
         {
-            showStreakLostPopup = true;
-            await JS.InvokeVoidAsync("localStorage.removeItem", "streakLost"); // Prevent showing again
-        }
+            await LoadStats();
+            await InvokeAsync(StateHasChanged); // Refresh UI on the main thread
+        }, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
     }
 
+	private async Task<string> WaitForSessionStorageAsync(string key, int delayMs = 500)
+	{
+    	string value = null!;
+    	while (string.IsNullOrEmpty(value))
+    	{
+        	value = await JS.InvokeAsync<string>("sessionStorage.getItem", key);
+        	if (string.IsNullOrEmpty(value))
+        	{
+            	await Task.Delay(delayMs); // wait before trying again
+        	}
+    	}
+    	return value;
+	}
 
-    public class DayStreak
+	private async Task LoadStats()
+	{
+    	var url = $"http://localhost:8080/?Command=GetPlayerStats&Extra={Uri.EscapeDataString($"{Login.UserName}")}";
+    	var response = await SendRequest(url);
+
+    	if (IsJson(response))
+    	{
+    		// It's JSON → parse to object
+    		error = null;
+    		stats = JsonSerializer.Deserialize<UserStats>(response);
+            await JS.InvokeVoidAsync("sessionStorage.setItem", "UserStats", response);
+		}
+    	else
+    	{
+    		// It's just a plain string
+    		error = $"Unable to get Challenge, try agian later";
+    	}
+    }
+
+    public void Dispose()
     {
-        public DateTime Date { get; set; }
-        public string DayShort { get; set; } = "";
-        public bool Completed { get; set; }
+        timer?.Dispose();
+    }
+
+    private async Task<string> SendRequest(string url)
+    {
+        try
+        {
+            var response = await Http.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+            string result = await response.Content.ReadAsStringAsync();
+            return result;
+        }
+        catch (Exception ex)
+        {
+            return $"Error: {ex.Message}";
+        }
     }
     
     private void ToggleShop()
@@ -53,6 +85,14 @@
         // This is a placeholder — you'll replace it with real shop logic later
         Console.WriteLine("Shop clicked");
     }
+
+    private async Task LogMessage()
+    {
+        await JS.InvokeVoidAsync("console.log", JsonSerializer.Serialize(stats));
+    }
+
+    bool IsJson(string response) =>
+        response.TrimStart().StartsWith("{") || response.TrimStart().StartsWith("[");
 }
 
 <div class="d-flex flex-column min-vh-100">
@@ -65,26 +105,26 @@
             <!-- Streak -->
             <div class="streak-container position-relative">
                 <img src="images/fire-icon.png" width="22" alt="Streak" class="hoverable-streak-icon" />
-                <span class="fw-bold text-black">@stats?.Streak</span>
+                <span class="fw-bold text-black">@stats?.Days</span>
 
                 <!-- Tooltip-like popover -->
                 <div class="streak-popover">
                     <div class="d-flex justify-content-between text-center">
-                        @foreach (var day in last7Days)
+                        @for(int i = -6; i <= 0; i++)
                         {
                             <div class="mx-1">
                                 <div class="streak-day-circle">
                                     @{
-                                        var isToday = day.Date.Date == DateTime.Today;
+                                        DateTime date = DateTime.Today.AddDays(i);
                                         string? icon = null;
 
-                                        if (day.Completed)
+                                    	if (i == 0)
+                                    	{
+                                    		icon = "clock-icon.gif";
+                                    	}
+                                        else if (stats.Last7Days.ElementAt(6+i))
                                         {
-                                            icon = "fire-icon.gif";
-                                        }
-                                        else if (isToday)
-                                        {
-                                            icon = "clock-icon.gif";
+                                        	icon = "fire-icon.gif";
                                         }
                                         else
                                         {
@@ -99,7 +139,7 @@
                                     }
 
                                 </div>
-                                <div class="day-label">@day.DayShort</div>
+                                <div class="day-label">@DateTime.Today.AddDays(i).ToString("ddd")</div>
                             </div>
                         }
                     </div>
@@ -115,7 +155,7 @@
             <!-- Score -->
             <div class="d-flex align-items-center gap-1">
                 <img src="images/star-icon.png" width="22" alt="Score" />
-                <span class="fw-bold text-black">@stats?.Score</span>
+                <span class="fw-bold text-black">@stats?.Points</span>
             </div>
         </div>
     }

@@ -1,13 +1,17 @@
 @page "/"
-@using ChallengeUpFrontend.Services
 @using ChallengeUpFrontend.Models
-@inject MockChallengeService ChallengeService
-@inject MockUserStatsService UserStatsService
+@using System.Text.Json
+@inject HttpClient Http
+@inject IJSRuntime JS
 
 <!-- Daily Challenge Preview -->
 <div class="text-center mt-4">
     <h3 class="mb-3 text-center display-6">🔥 Today's Challenge</h3>
-
+    
+    @if (!string.IsNullOrEmpty(error))
+    {
+        <div class="login-error">@error</div>
+    }
 
     @if (dailyChallenge is null)
     {
@@ -17,12 +21,12 @@
     {
         <div class="challenge-card">
             <div class="d-flex align-items-start gap-3">
-                <input type="checkbox" class="form-check-input mt-1" @bind="dailyChallenge.IsCompleted" />
+                <input type="checkbox" class="form-check-input mt-1" @bind="DailyChallengeCompleted" @bind:event="onchange" />
                 <div>
-                    <h4 class="fw-bold mb-1" style="@(dailyChallenge.IsCompleted ? "text-decoration: line-through;" : "")">
-                        @dailyChallenge.Text
+                    <h4 class="fw-bold mb-1" style="@(dailyChallenge.isCompleted ? "text-decoration: line-through;" : "")">
+                        @dailyChallenge.ToDo
                     </h4>
-                    <p class="text-muted mb-0">@dailyChallenge.Category – @dailyChallenge.Points pts</p>
+                    <p class="text-muted mb-0">@dailyChallenge.Category – @dailyChallenge.PointsAmount pts</p>
                 </div>
             </div>
         </div>
@@ -34,11 +38,148 @@
 @code {
     private UserStats? stats;
     private Challenge? dailyChallenge;
-
-    protected override async Task OnInitializedAsync()
+    private Challenge? ChallengeTemp;
+    private PlayerLogin? Login;
+    
+    private string responseMessage { get; set; }
+    private string[] parts;
+    private string? error;
+    
+    private System.Threading.Timer? timer;
+    
+    private bool DailyChallengeCompleted
     {
-        stats = await UserStatsService.GetUserStatsAsync();
-        var challenges = await ChallengeService.GetDailyChallengesAsync();
-        dailyChallenge = challenges.FirstOrDefault();
+        get => dailyChallenge.isCompleted;
+        set
+        {
+            if (dailyChallenge.isCompleted != value)
+            {
+                dailyChallenge.isCompleted = value;
+                OnCheckboxChanged(value);
+            }
+        }
     }
+
+    private async void OnCheckboxChanged(bool completed)
+    {
+        if (completed)
+        {
+            var url =   $"http://localhost:8080/?Command=CompletedTask&Extra={Uri.EscapeDataString($"{Login.UserName}")}";
+            string response = await SendRequest(url);
+
+            if (response.TrimStart().StartsWith("Error"))
+            {
+                error = "Unable to check task correct";
+            }
+            else
+            {
+                dailyChallenge.isCompleted = true;
+                error = null;
+                var json = System.Text.Json.JsonSerializer.Serialize(dailyChallenge);
+                await JS.InvokeVoidAsync("sessionStorage.setItem", "ChallengeInfo", json);
+            }
+        }
+        else
+        {
+            var url =   $"http://localhost:8080/?Command=NotCompletedTask&Extra={Uri.EscapeDataString($"{Login.UserName}")}";
+            string response = await SendRequest(url);
+            
+            if (response.TrimStart().StartsWith("Error"))
+            {
+                error = "Unable to uncheck task correct";
+            }
+            else
+            {
+                dailyChallenge.isCompleted = false;
+                error = null;
+                var json = System.Text.Json.JsonSerializer.Serialize(dailyChallenge);
+                await JS.InvokeVoidAsync("sessionStorage.setItem", "ChallengeInfo", json);
+            }
+        }
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        string json = await JS.InvokeAsync<string>("sessionStorage.getItem", "LoginInfo");
+        Login = JsonSerializer.Deserialize<PlayerLogin>(json);
+
+        string challengeJson = await JS.InvokeAsync<string>("sessionStorage.getItem", "ChallengeInfo");
+        if (!string.IsNullOrWhiteSpace(challengeJson))
+        {
+            dailyChallenge = JsonSerializer.Deserialize<Challenge>(challengeJson);
+            ChallengeTemp = JsonSerializer.Deserialize<Challenge>(challengeJson);
+        }
+
+        // Refresh timer (optional: avoid creating multiple timers)
+        timer?.Dispose();
+        timer = new System.Threading.Timer(async _ =>
+        {
+            await LoadTaskAsync();
+            await InvokeAsync(StateHasChanged);
+        }, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
+    }
+    
+    private async Task LoadTaskAsync()
+    {
+        var url =   $"http://localhost:8080/?Command=GetTask&Extra={Uri.EscapeDataString($"{Login.UserName}")}";
+        var response = await SendRequest(url);
+        
+        if (IsJson(response))
+        {
+            // It's JSON → parse to object
+            error = null;
+            if (dailyChallenge == null)
+            {
+                dailyChallenge = JsonSerializer.Deserialize<Challenge>(response);
+                ChallengeTemp = JsonSerializer.Deserialize<Challenge>(response);
+                var json = System.Text.Json.JsonSerializer.Serialize(dailyChallenge);
+                await JS.InvokeVoidAsync("sessionStorage.setItem", "ChallengeInfo", json);
+            }
+            else
+            {
+                ChallengeTemp = JsonSerializer.Deserialize<Challenge>(response);
+            }
+
+            if (ChallengeTemp.ToDo != dailyChallenge.ToDo)
+            {
+                dailyChallenge = ChallengeTemp;
+                var json = System.Text.Json.JsonSerializer.Serialize(dailyChallenge);
+                await JS.InvokeVoidAsync("sessionStorage.setItem", "ChallengeInfo", json);
+            }
+        }
+        else
+        {
+            // It's just a plain string
+            error = $"Unable to get Challenge, try agian later";
+        }
+    }
+    
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+
+    private async Task<string> SendRequest(string url)
+    {
+        try
+        {
+            var response = await Http.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+            string result = await response.Content.ReadAsStringAsync();
+            return result;
+        }
+        catch (Exception ex)
+        {
+            return $"Error: {ex.Message}";
+        }
+    }
+    
+    private async Task LogMessage()
+    {
+        await JS.InvokeVoidAsync("console.log", "test1");
+    }
+    
+    bool IsJson(string response) =>
+        response.TrimStart().StartsWith("{") || response.TrimStart().StartsWith("[");
+
 }

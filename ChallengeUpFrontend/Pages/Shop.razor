@@ -1,4 +1,9 @@
 @page "/shop"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@using ChallengeUpFrontend.Models
+@using System.Text.Json
 
 <div class="shop-container text-center">
     <h2 class="shop-title mb-4">Shop</h2>
@@ -41,17 +46,68 @@
 </div>
 
 @code {
-    bool canBuyStreakRevival = true;
+    private UserStats? stats;
+    
+    bool canBuyStreakRevival = false;
     bool isBuying = false;
     bool showGemAnimation = false;
+
+    private string[] parts;
+    private string responseMessage;
+    private string error;
+    
+    protected override async Task OnParametersSetAsync()
+    {
+        string StatsJson = await JS.InvokeAsync<string>("sessionStorage.getItem", "UserStats");
+        stats = JsonSerializer.Deserialize<UserStats>(StatsJson);
+
+        if (stats.Gems >= 100)
+        {
+            canBuyStreakRevival = true;
+        }
+        else
+        {
+            canBuyStreakRevival = false;
+        }
+    }
 
     async Task BuyStreakRevival()
     {
         isBuying = true;
         showGemAnimation = true;
-        await Task.Delay(1200);
+        
+        var url = $"http://localhost:8080/?Command=PayToReset&Extra={Uri.EscapeDataString($"{stats.Username}")}";
+        responseMessage = await SendRequest(url);
+
+        parts = responseMessage.Split(":");
+            
+        if (parts.Length > 1)
+        {
+            error = "Invalid Username/password";
+        }
+        else
+        {
+            error = null;
+            NavigationManager.NavigateTo("/");
+        }
+        
         showGemAnimation = false;
         isBuying = false;
         Console.WriteLine("Streak Revival purchased!");
+    }
+    
+    private async Task<string> SendRequest(string url)
+    {
+        try
+        {
+            var response = await Http.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+            string result = await response.Content.ReadAsStringAsync();
+            return result;
+        }
+        catch (Exception ex)
+        {
+            return $"Error: {ex.Message}";
+        }
     }
 }
