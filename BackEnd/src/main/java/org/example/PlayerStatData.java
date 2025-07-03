@@ -34,7 +34,7 @@ public class PlayerStatData {
         this.CompletedTasksTemp = new ArrayList<Task>();
         this.Last7DaysTemp = new LinkedList<Boolean>();
 
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 6; i++) {
             this.Last7Days.add(false);
             this.Last7DaysTemp.add(false);
         }
@@ -42,7 +42,7 @@ public class PlayerStatData {
 
     public Integer CalulatePointsToBeEarned(Task T) {
         int EffectiveStreak = Math.min(getDays(), 14);
-        double Points = T.getPointsAmount() * EffectiveStreak+1; // log base 2
+        double Points = T.getPointsAmount() * (EffectiveStreak+1);
         return (int) Points;
     }
 
@@ -51,7 +51,10 @@ public class PlayerStatData {
             int Points = CalulatePointsToBeEarned(Task);
             setPoints(getPoints() + Points);
             setDays(getDays() + 1);
+            PointsTemp = getPoints();
+            DaysTemp = getDays();
             Task.setCompletedAt(LocalDate.now().toString());
+            Task.setCompleted(true);
             CompletedTasks.add(Task);
             CompletedTasksTemp.add(Task);
             Last7Days.poll();
@@ -70,7 +73,7 @@ public class PlayerStatData {
             setPoints(0);
             setDays(0);
             CompletedTasks.clear();
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < 6; i++) {
                 Last7Days.poll();
                 Last7Days.add(false);
             }

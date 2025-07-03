@@ -1,12 +1,25 @@
 package org.example;
 
-import com.google.gson.Gson;
+//Error Codes Chart
+// 1 - Error: Client already exists
+// 2 - Error: Username already used
+// 3 - Error: Password not strong
+// 4 - Error: Invalid email
+// 5 - Error: Account does not exist
+// 6 - Error: Not enough gems to restore
+// 7 - Error: Incorrect username
+// 8 - Error: Unknown command
 
+import com.google.gson.Gson;
 import java.io.*;
-import java.net.Socket;
+import java.net.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.locks.Lock;
+import java.io.OutputStream;
 
 public class Worker extends Thread {
     private Socket socket;
@@ -55,40 +68,46 @@ public class Worker extends Thread {
     public void run() {
         BufferedReader in = null;
         BufferedWriter out = null;
+        OutputStream os = null;
 
 
         try {
             in = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
             out = new BufferedWriter(new OutputStreamWriter(this.socket.getOutputStream()));
+            os = this.socket.getOutputStream();
 
-            String line;
-            Gson gson = new Gson();
+            String line = in.readLine();
 
-            while ((line = in.readLine()) != null) {
-                Command cmd = gson.fromJson(line, Command.class);
-                System.out.println(cmd.getCommand());
+            System.out.println("Received line: " + line);
 
-                switch (cmd.getCommand()) {
-                    //AccountManagement
-                    //Important: EXTRA(USERNAME;PASSWORD)
-                    case "CreateAccount":{
+            Map<String, String> urlParams = parseUrl(line);
+            String Com = urlParams.getOrDefault("Command", "default");
+            String EX_Encoded = urlParams.getOrDefault("Extra", "");
+            String EX = java.net.URLDecoder.decode(EX_Encoded, StandardCharsets.UTF_8.name());
+
+            System.out.println(line);
+            System.out.println("Command: " + Com);
+            System.out.println("Extra: " + EX_Encoded);
+            System.out.println("Decoded Extra: " + EX);
+
+            switch (Com) {
+                //AccountManagement
+                //Important: EXTRA(USERNAME;PASSWORD)
+                case "CreateAccount":{
                         CLientLock.lock();
-                        String[] Extra = cmd.getExtra().split(";");
+                        String[] Extra = EX.split(";");
 
                         ClientData CD = new ClientData(Extra[0], Extra[1]);
                         PlayerStatData PSD = new PlayerStatData(Extra[0],0,0);
                         if(Clients.contains(CD)) {
-                            out.write("Error: Client already exists");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Error:1");
+                            System.out.println("Error");
                         } else if (IsUsernameUsed(Extra[0])) {
-                            out.write("Error: Username is already taken");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Error:2");
+                            System.out.println("Error");
                         } else if (!IsPasswordStrong(Extra[1], Extra[0])) {
-                            out.write("Error: Invalid password");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Error:3");
+                            System.out.println("Error");
 //                        } else if (!IsEmailRight(Extra[1])) {
 //                            out.write("Error: Invalid email");
 //                            out.newLine();
@@ -96,9 +115,7 @@ public class Worker extends Thread {
                         } else {
                             Clients.add(CD);
                             PlayerStats.add(PSD);
-                            out.write("Client created account");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Successfully created account");
                             DataManagment.saveList(PlayerStats, "src/main/java/org/example/Files/PlayerStats.json");
                             DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
                         }
@@ -106,9 +123,9 @@ public class Worker extends Thread {
                         break;
                     }
                     //Important: EXTRA(USERNAME;PASSWORD)
-                    case "RemoveAccount":{
+                case "RemoveAccount":{
                         CLientLock.lock();
-                        String[] Extra = cmd.getExtra().split(";");
+                        String[] Extra = EX.split(";");
 
                         PlayerStatData PSD= null;
 
@@ -124,41 +141,34 @@ public class Worker extends Thread {
                         if(Clients.contains(CD)) {
                             Clients.remove(CD);
                             PlayerStats.remove(PSD);
-                            out.write("Successfully removed account");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Successfully removed account");
                             DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
                             DataManagment.saveList(PlayerStats, "\"src/main/java/org/example/Files/PlayerStats.json");
                         }else{
-                            out.write("Error: Client does not exist");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Error:5");
                         }
                         CLientLock.unlock();
                         break;
                     }
                     //Important: EXTRA(USERNAME;PASSWORD)
-                    case "Login":{
-                        CLientLock.lock();
-                        String[] Extra = cmd.getExtra().split(";");
+                case "Login":{
+                    CLientLock.lock();
+                    String[] Extra = EX.split(";");
 
-                        ClientData CD = new ClientData(Extra[0], Extra[1]);
-                        if(Clients.contains(CD)) {
-                            out.write("successfully logged in");
-                            out.newLine();
-                            out.flush();
-                        }else {
-                            out.write("Error: Incorrect username or password");
-                            out.newLine();
-                            out.flush();
-                        }
-                        CLientLock.unlock();
-                        break;
+                    ClientData CD = new ClientData(Extra[0], Extra[1]);
+                    if(Clients.contains(CD)) {
+                        sendStringResponse(os, "Successfully logged in");
+                    }else {
+                        sendStringResponse(os,"Error:5");
+                        System.out.println("Error");
                     }
+                    CLientLock.unlock();
+                    break;
+                }
                     //Important: EXTRA(USERNAME;PASSWORD;NEW USERNAME)
-                    case "EditAccountName":{
+                case "EditAccountName":{
                         CLientLock.lock();
-                        String[] Extra = cmd.getExtra().split(";");
+                        String[] Extra = EX.split(";");
                         ClientData CD_old = new ClientData(Extra[0], Extra[1]);
                         ClientData CD_new = new ClientData(Extra[2], Extra[1]);
 
@@ -178,16 +188,14 @@ public class Worker extends Thread {
                                 Clients.remove(CD_old);
                                 Clients.add(CD_new);
                                 PlayerStats.add(PSD_new);
-                                out.write("Successfully edited account");
-                                out.newLine();
-                                out.flush();
+                                sendStringResponse(os, "Successfully edited account");
                                 DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
                                 DataManagment.saveList(PlayerStats, "\"src/main/java/org/example/Files/PlayerStats.json");
                             }else {
-                                out.write("Error: Account does not exist");
+                                sendStringResponse(os, "Error:5");
                             }
                         }else{
-                            out.write("Error: Incorrect username");
+                            out.write("Error:7");
                             out.newLine();
                             out.flush();
                         }
@@ -197,22 +205,19 @@ public class Worker extends Thread {
                         break;
                     }
                     //Important: EXTRA(USERNAME;PASSWORD;NEW PASSWORD)
-                    case "EditAccountPassword":{
+                case "EditAccountPassword":{
                         CLientLock.lock();
-                        String[] Extra = cmd.getExtra().split(";");
+                        String[] Extra = EX.split(";");
 
-                        String NewPassword = cmd.getExtra();
                         ClientData CD_old = new ClientData(Extra[0], Extra[1]);
                         ClientData CD_new = new ClientData(Extra[0], Extra[2]);
                         if(Clients.contains(CD_old)) {
                             Clients.remove(CD_old);
                             Clients.add(CD_new);
-                            out.write("Successfully edited account");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Successfully edited account");
                             DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
                         }else {
-                            out.write("Error: Account does not exist");
+                            sendStringResponse(os, "Error:5");
                         }
                         DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
                         CLientLock.unlock();
@@ -246,9 +251,9 @@ public class Worker extends Thread {
 
                     //Important: EXTRA(USERNAME)
 
-                    case "CompletedTask":{
+                case "CompletedTask":{
                         PlayerLock.lock();
-                        String[] Extra = cmd.getExtra().split(";");
+                        String[] Extra = EX.split(";");
 
                         PlayerStatData PSD= null;
 
@@ -263,22 +268,44 @@ public class Worker extends Thread {
                         if(PSD != null) {
                             PSD.setCompleted(true);
                             PlayerStats.add(PSD);
-                            out.write("Task successfully marked completed");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Successfully marked task completed");
                             DataManagment.saveList(PlayerStats, "src/main/java/org/example/Files/PlayerStats.json");
                         }else {
-                            out.write("Error: Account does not exist");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Error:5");
                         }
                         PlayerLock.unlock();
                         break;
                     }
                     //Important: EXTRA(USERNAME)
-                    case "GetPlayerStats":{
+                case "NotCompletedTask":{
+                            PlayerLock.lock();
+                            String[] Extra = EX.split(";");
+
+                            PlayerStatData PSD= null;
+
+                            for(PlayerStatData psd : PlayerStats) {
+                                if(psd.getUsername().equals(Extra[0])) {
+                                    PSD = psd;
+                                    PlayerStats.remove(psd);
+                                    break;
+                                }
+                            }
+
+                            if(PSD != null) {
+                                PSD.setCompleted(false);
+                                PlayerStats.add(PSD);
+                                sendStringResponse(os, "Successfully marked task not completed");
+                                DataManagment.saveList(PlayerStats, "src/main/java/org/example/Files/PlayerStats.json");
+                            }else {
+                                sendStringResponse(os, "Error:5");
+                            }
+                            PlayerLock.unlock();
+                            break;
+                        }
+                    //Important: EXTRA(USERNAME)
+                case "GetPlayerStats":{
                         PlayerLock.lock();
-                        String[] Extra = cmd.getExtra().split(";");
+                        String[] Extra = EX.split(";");
 
                         PlayerStatData PSD= null;
 
@@ -290,21 +317,17 @@ public class Worker extends Thread {
                         }
 
                         if(PSD != null) {
-                            out.write(gson.toJson(PSD));
-                            out.newLine();
-                            out.flush();
+                            sendJsonResponse(PSD, os);
                         }else {
-                            out.write("Error: Account does not exist");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Error:5");
                         }
                         PlayerLock.unlock();
                         break;
                     }
                     //Important: EXTRA(USERNAME)
-                    case "PayToReset":{
+                case "PayToReset":{
                         PlayerLock.lock();
-                        String[] Extra = cmd.getExtra().split(";");
+                        String[] Extra = EX.split(";");
 
                         PlayerStatData PSD= null;
 
@@ -320,26 +343,20 @@ public class Worker extends Thread {
                             Integer Value = PSD.RestoreTemp();
                             PlayerStats.add(PSD);
                             if (Value > 0) {
-                                out.write("Success " + PSD.getUsername());
-                                out.newLine();
-                                out.flush();
+                                sendStringResponse(os, "Successfully marked task restored");
                             }else {
-                                out.write("Error not enough gems");
-                                out.newLine();
-                                out.flush();
+                                sendStringResponse(os, "Error:6");
                             }
                         }else {
-                            out.write("Error: Account does not exist");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Error:5");
                         }
                         PlayerLock.unlock();
                         break;
                     }
                     //Important: EXTRA(USERNAME;GEMSAMMOUNT)
-                    case "AddGems":{
+                case "AddGems":{
                         PlayerLock.lock();
-                        String[] Extra = cmd.getExtra().split(";");
+                        String[] Extra = EX.split(";");
 
                         PlayerStatData PSD= null;
 
@@ -354,35 +371,31 @@ public class Worker extends Thread {
                         if(PSD != null) {
                             PSD.AddGems(Integer.parseInt(Extra[1]));
                             PlayerStats.add(PSD);
-                            out.write("Successfully added gems");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Successfully added gems");
                         }else {
-                            out.write("Error: Account does not exist");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Error:5");
                         }
                         PlayerLock.unlock();
                         break;
                     }
                     //Important: NONE
-                    case "GetTop10":{
-                        PlayerLock.lock();
-                        List<PlayerStatData> temp = PlayerStats;
-                        temp.sort((a,b) -> Integer.compare(b.getPoints(), a.getPoints()));
-                        List<PlayerStatData> top10 = new ArrayList<>(temp.subList(0, Math.min(PlayerStats.size(), 10)));
-                        out.write(gson.toJson(top10));
-                        out.newLine();
-                        out.flush();
-                        PlayerLock.unlock();
-                        break;
-                    }
+//                    case "GetTop10":{
+//                        PlayerLock.lock();
+//                        List<PlayerStatData> temp = PlayerStats;
+//                        temp.sort((a,b) -> Integer.compare(b.getPoints(), a.getPoints()));
+//                        List<PlayerStatData> top10 = new ArrayList<>(temp.subList(0, Math.min(PlayerStats.size(), 10)));
+//                        out.write(gson.toJson(top10));
+//                        out.newLine();
+//                        out.flush();
+//                        PlayerLock.unlock();
+//                        break;
+//                    }
 
                     //Task Management
                     //Important: EXTRA(USERNAME)
-                    case "GetTask":{
+                case "GetTask":{
                         PlayerLock.lock();
-                        String[] Extra = cmd.getExtra().split(";");
+                        String[] Extra = EX.split(";");
 
                         PlayerStatData PSD= null;
 
@@ -396,29 +409,94 @@ public class Worker extends Thread {
                         if(PSD != null) {
                             Task T = DataManagment.loadObject("src/main/java/org/example/Files/TaskFile.json", Task.class);
                             T.setPointsAmount(PSD.CalulatePointsToBeEarned(T));
-                            out.write(gson.toJson(T));
-                            out.newLine();
-                            out.flush();
+                            System.out.println(T.getPointsAmount());
+                            sendJsonResponse(T, os);
                         }else {
-                            out.write("Error: Account does not exist");
-                            out.newLine();
-                            out.flush();
+                            sendStringResponse(os, "Error:5");
                         }
                         PlayerLock.unlock();
                         break;
                     }
 
                     //Default command to handle unknown commands
-                    default:{
-                        out.write("Error: Unknown command");
-                        out.newLine();
-                        out.flush();
-                        break;
-                    }
+                default:{
+                    sendStringResponse(os, "Error:8");
+                    break;
                 }
             }
+
+            System.out.println("Ended command: " + Com);
+            socket.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
+    public void sendStringResponse(OutputStream outputStream, String message) throws IOException {
+        byte[] body = message.getBytes(StandardCharsets.UTF_8);
+
+        // Build HTTP response headers
+        String httpResponse =
+                "HTTP/1.1 200 OK\r\n" +
+                        "Access-Control-Allow-Origin: http://localhost:5005\r\n" +
+                        "Access-Control-Allow-Methods: GET, POST, OPTIONS\r\n" +
+                        "Access-Control-Allow-Headers: Content-Type\r\n" +
+                        "Content-Type: application/json\r\n" +
+                        "Content-Length: " + body.length + "\r\n" +
+                        "\r\n";
+
+        // Send headers
+        outputStream.write(httpResponse.getBytes(StandardCharsets.UTF_8));
+
+        // Send body (your string message)
+        outputStream.write(body);
+
+        outputStream.flush();
+    }
+
+    public void sendJsonResponse(Object obj, OutputStream outputStream) throws IOException {
+        Gson gson = new Gson();
+
+        // Convert object to JSON string
+        String json = gson.toJson(obj);
+
+        // Convert JSON string to bytes
+        byte[] jsonBytes = json.getBytes(StandardCharsets.UTF_8);
+
+        // If you are implementing your own HTTP server or protocol,
+        // you must send HTTP headers before JSON body, e.g.:
+        String httpResponse =
+                "HTTP/1.1 200 OK\r\n" +
+                        "Access-Control-Allow-Origin: http://localhost:5005\r\n" +
+                        "Access-Control-Allow-Methods: GET, POST, OPTIONS\r\n" +
+                        "Access-Control-Allow-Headers: Content-Type\r\n" +
+                        "Content-Type: application/json\r\n" +
+                        "Content-Length: " + jsonBytes.length + "\r\n" +
+                        "\r\n";
+
+        // Send headers
+        outputStream.write(httpResponse.getBytes(StandardCharsets.UTF_8));
+
+        // Send JSON body
+        System.out.println(json);
+        outputStream.write(jsonBytes);
+
+        outputStream.flush();
+    }
+
+    private Map<String, String> parseUrl(String url) {
+        Map<String, String> map = new HashMap<>();
+        if (!url.contains("?")) return map;
+
+        String[] parts = url.split("\\s+");
+        String query = parts[1].split("\\?")[1];
+        String[] params = query.split("&");
+
+        for (String param : params) {
+            String[] keyValue = param.split("=");
+            map.put(keyValue[0], keyValue[1]);
+        }
+        return map;
+    }
+
 }

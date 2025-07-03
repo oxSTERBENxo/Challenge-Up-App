@@ -26,7 +26,7 @@ public class Server extends Thread {
     private List<Task> Tasks;
     private Lock ClientLock = new ReentrantLock();
     private Lock PlayerLock = new ReentrantLock();
-    private Task TT = new Task("No Task Assigned");
+    private Task TT = new Task("No Task Assigned","No Category");
 
     public Server(Integer port, String IP) {
         this.port = port;
@@ -151,7 +151,7 @@ public class Server extends Thread {
             TaskFile = new File("src/main/java/org/example/Files/TaskFile.json");
             if (TaskFile.createNewFile()) {
                 System.out.println("File created");
-                Task T = new Task("Prepare to start your improvement journey!");
+                Task T = new Task("Prepare to start your improvement journey!", "Welcome");
                 T.setCompletedAt(LocalDate.now().toString());
                 T.setPointsAmount(0);
                 DataManagment.saveObject(T, "src/main/java/org/example/Files/TaskFile.json");
@@ -175,7 +175,7 @@ public class Server extends Thread {
         Thread TimeCheck = new Thread(() -> {
             while (true) {
                 try {
-                    Thread.sleep( 30* 1000); // Check every 30 minutes
+                    Thread.sleep(  30* 1000); // Check every 30 minutes
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
