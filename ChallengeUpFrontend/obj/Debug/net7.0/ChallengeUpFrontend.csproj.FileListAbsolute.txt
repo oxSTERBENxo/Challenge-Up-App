@@ -1658,6 +1658,6 @@ C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend\obj\Debug\net7.
 C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend\obj\Debug\net7.0\refint\ChallengeUpFrontend.dll
 C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend\obj\Debug\net7.0\ChallengeUpFrontend.pdb
 C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend\obj\Debug\net7.0\ref\ChallengeUpFrontend.dll
-C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend\obj\Debug\net7.0\compressed\0vjyve5g60-q68qzxr9fq.gz
-C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend\obj\Debug\net7.0\compressed\it4mostb6w-gfm584ojsy.gz
-C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend\obj\Debug\net7.0\compressed\5hizwm3l0v-npiz2qut00.gz
+C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend\obj\Debug\net7.0\compressed\0vjyve5g60-sveko3lzdd.gz
+C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend\obj\Debug\net7.0\compressed\it4mostb6w-mcx98w8bd2.gz
+C:\Users\blaze\IdeaProjects\Challenge-Up-App\ChallengeUpFrontend\obj\Debug\net7.0\compressed\5hizwm3l0v-ildppt86a2.gz

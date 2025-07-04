@@ -1,7 +1,7 @@
 {
   "entryAssembly": "ChallengeUpFrontend",
   "resources": {
-    "hash": "sha256-Xnwnq2glsqT9k7TLJo6/ktmytVE8fMdCVXoHJW/skWQ=",
+    "hash": "sha256-NkfA1Co9kwx7jCKN3jlAdeg7YLy9KU2v43mVbSqTtEY=",
     "runtime": {
       "dotnet.js": "sha256-eaJTmow4t8eE7FZMZR5Ja41JMOefGCbIYDTdpclGsac=",
       "dotnet.timezones.blat": "sha256-gbATD5HDsHYtW8vdPYh9iSBY4O5CjvMeCSF5xXWF1xo=",
@@ -203,10 +203,10 @@
       "mscorlib.dll": "sha256-HYyp9hO+GKFyupcEiY1PxtBBXbHzefsO3Q8RiQTaNCA=",
       "netstandard.dll": "sha256-N5CcC3sLzGBesbmeJAp5bwxABN9u7SwkIO5qfFjzoik=",
       "System.Private.CoreLib.dll": "sha256-bJS1DJmhjP7PvegYG+Z8O9EDtRY78HKinA3LUMVLlSQ=",
-      "ChallengeUpFrontend.dll": "sha256-8sJw+cW+9JF5ryqu2DK4HXHEa3inyO80bH2zRh9AyFU="
+      "ChallengeUpFrontend.dll": "sha256-WJwFM8xSZPMg/WjDnexGE4UCIbWZpqZWSXCjKqYfJfc="
     },
     "pdb": {
-      "ChallengeUpFrontend.pdb": "sha256-NCfIRX5EgOWCP8+F/IIy7Q7krhTTJ9Qg7l+w8aVPc9w="
+      "ChallengeUpFrontend.pdb": "sha256-6ibdc0uU5e2542bC7406wYPFK20ZEnPSudX8aoq8znA="
     },
     "runtimeAssets": {
       "dotnet.wasm": {
