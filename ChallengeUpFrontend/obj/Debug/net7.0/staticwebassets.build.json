@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uxxZivqH58vM2uAN0ydtG46O0HvIXbTsdQ/N1QHVQm0=",
+  "Hash": "IxwDfEBlFPP6S2tt7gvL03A37fF+ckuJu7W6xQ93Ui0=",
   "Source": "ChallengeUpFrontend",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "cb8dldk702",
-      "Integrity": "WPS2N7L2Y6A7uZnOBLem60adz96658lw/9KOVDvgag8=",
+      "Fingerprint": "6t9cgbq0jt",
+      "Integrity": "Vod5+wmH9EXT8bwmV9/1Hbr0SCc5+T/EFXk0s8aXv+w=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net7.0\\blazor.boot.json"
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "64ko4gcb5u",
-      "Integrity": "1r8QaOuXyg58TMrpe3UuTnQJ/Q3lxAaqqCCGEITLo8E=",
+      "Fingerprint": "u3tcx5ikgw",
+      "Integrity": "WjPY/R1Z1SEx7opXqxYWAfa9orw4uBC3IH6YChSsboo=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net7.0\\ChallengeUpFrontend.dll"
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "w6775x5jof",
-      "Integrity": "2IbtEEl6GzflbDELagp0ZdX8VxkMHC6nNzJUYppt3+Y=",
+      "Fingerprint": "54rg2bun5n",
+      "Integrity": "uyRvm+S2VHXz/Y4gGP2ltbIfvSFqq089z1b7BjETbB4=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net7.0\\ChallengeUpFrontend.pdb"
@@ -4406,7 +4406,7 @@
       "OriginalItemSpec": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\bin\\Debug\\net7.0\\wwwroot\\_framework\\dotnet.js"
     },
     {
-      "Identity": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\0vjyve5g60-64ko4gcb5u.gz",
+      "Identity": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\0vjyve5g60-u3tcx5ikgw.gz",
       "SourceId": "ChallengeUpFrontend",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\",
@@ -4420,8 +4420,8 @@
       "RelatedAsset": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\bin\\Debug\\net7.0\\wwwroot\\_framework\\ChallengeUpFrontend.dll",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "i3vwi9a0so",
-      "Integrity": "bhvHb52eS5VYQ9emQfFphTq6d63nf4ZdZVVe7L0ISlY=",
+      "Fingerprint": "i0yic9znp9",
+      "Integrity": "srwkd2gW/OsYZ295KNixvbWIVrX6/sx6jDVbfzRCfO8=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\bin\\Debug\\net7.0\\wwwroot\\_framework\\ChallengeUpFrontend.dll"
@@ -4742,7 +4742,7 @@
       "OriginalItemSpec": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\bin\\Debug\\net7.0\\wwwroot\\_framework\\dotnet.wasm"
     },
     {
-      "Identity": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\5hizwm3l0v-cb8dldk702.gz",
+      "Identity": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\5hizwm3l0v-6t9cgbq0jt.gz",
       "SourceId": "ChallengeUpFrontend",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\",
@@ -4756,8 +4756,8 @@
       "RelatedAsset": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "n8ut76fpbl",
-      "Integrity": "V63d/c4Muk198T+N/3vtM7L/n53hdcc0YtNpeO0TcBo=",
+      "Fingerprint": "3tc9tzxbb2",
+      "Integrity": "FyJDlGjWvM5RoV9KvSIwdV5mtqHho60paJ0bldmPOyk=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.boot.json"
@@ -6296,7 +6296,7 @@
       "OriginalItemSpec": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Linq.Parallel.dll"
     },
     {
-      "Identity": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\it4mostb6w-w6775x5jof.gz",
+      "Identity": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\it4mostb6w-54rg2bun5n.gz",
       "SourceId": "ChallengeUpFrontend",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\",
@@ -6310,8 +6310,8 @@
       "RelatedAsset": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\bin\\Debug\\net7.0\\wwwroot\\_framework\\ChallengeUpFrontend.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "b8d1qwe760",
-      "Integrity": "xYwj4M9l42TWWLLOevPaE+dRvfvYobGq0dGb7OP89kU=",
+      "Fingerprint": "su4uxqntw3",
+      "Integrity": "7HIkcSydyO6ef7ZuyFS2o+e1URc+XiHKNiZuQ+eWiyY=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\bin\\Debug\\net7.0\\wwwroot\\_framework\\ChallengeUpFrontend.pdb"
@@ -9151,11 +9151,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WPS2N7L2Y6A7uZnOBLem60adz96658lw/9KOVDvgag8=\""
+          "Value": "\"Vod5+wmH9EXT8bwmV9/1Hbr0SCc5+T/EFXk0s8aXv+w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Jul 2025 00:45:14 GMT"
+          "Value": "Sat, 05 Jul 2025 00:52:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9165,18 +9165,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WPS2N7L2Y6A7uZnOBLem60adz96658lw/9KOVDvgag8="
+          "Value": "sha256-Vod5+wmH9EXT8bwmV9/1Hbr0SCc5+T/EFXk0s8aXv+w="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\5hizwm3l0v-cb8dldk702.gz",
+      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\5hizwm3l0v-6t9cgbq0jt.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000113999088"
+          "Quality": "0.000113960114"
         }
       ],
       "ResponseHeaders": [
@@ -9186,15 +9186,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8771"
+          "Value": "8774"
         },
         {
           "Name": "ETag",
-          "Value": "\"V63d/c4Muk198T+N/3vtM7L/n53hdcc0YtNpeO0TcBo=\""
+          "Value": "\"FyJDlGjWvM5RoV9KvSIwdV5mtqHho60paJ0bldmPOyk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Jul 2025 00:39:35 GMT"
+          "Value": "Sat, 05 Jul 2025 00:52:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9214,19 +9214,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"WPS2N7L2Y6A7uZnOBLem60adz96658lw/9KOVDvgag8=\""
+          "Value": "W/\"Vod5+wmH9EXT8bwmV9/1Hbr0SCc5+T/EFXk0s8aXv+w=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WPS2N7L2Y6A7uZnOBLem60adz96658lw/9KOVDvgag8="
+          "Value": "sha256-Vod5+wmH9EXT8bwmV9/1Hbr0SCc5+T/EFXk0s8aXv+w="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\5hizwm3l0v-cb8dldk702.gz",
+      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\5hizwm3l0v-6t9cgbq0jt.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9235,7 +9235,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8771"
+          "Value": "8774"
         },
         {
           "Name": "Content-Type",
@@ -9243,11 +9243,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"V63d/c4Muk198T+N/3vtM7L/n53hdcc0YtNpeO0TcBo=\""
+          "Value": "\"FyJDlGjWvM5RoV9KvSIwdV5mtqHho60paJ0bldmPOyk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Jul 2025 00:39:35 GMT"
+          "Value": "Sat, 05 Jul 2025 00:52:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9265,7 +9265,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-V63d/c4Muk198T+N/3vtM7L/n53hdcc0YtNpeO0TcBo="
+          "Value": "sha256-FyJDlGjWvM5RoV9KvSIwdV5mtqHho60paJ0bldmPOyk="
         }
       ]
     },
@@ -9425,11 +9425,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"1r8QaOuXyg58TMrpe3UuTnQJ/Q3lxAaqqCCGEITLo8E=\""
+          "Value": "\"WjPY/R1Z1SEx7opXqxYWAfa9orw4uBC3IH6YChSsboo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Jul 2025 00:06:53 GMT"
+          "Value": "Sat, 05 Jul 2025 00:50:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9439,18 +9439,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-1r8QaOuXyg58TMrpe3UuTnQJ/Q3lxAaqqCCGEITLo8E="
+          "Value": "sha256-WjPY/R1Z1SEx7opXqxYWAfa9orw4uBC3IH6YChSsboo="
         }
       ]
     },
     {
       "Route": "_framework/ChallengeUpFrontend.dll",
-      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\0vjyve5g60-64ko4gcb5u.gz",
+      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\0vjyve5g60-u3tcx5ikgw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000044338033"
+          "Quality": "0.000044332136"
         }
       ],
       "ResponseHeaders": [
@@ -9460,15 +9460,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22553"
+          "Value": "22556"
         },
         {
           "Name": "ETag",
-          "Value": "\"bhvHb52eS5VYQ9emQfFphTq6d63nf4ZdZVVe7L0ISlY=\""
+          "Value": "\"srwkd2gW/OsYZ295KNixvbWIVrX6/sx6jDVbfzRCfO8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Jul 2025 00:06:53 GMT"
+          "Value": "Sat, 05 Jul 2025 00:50:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9488,19 +9488,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"1r8QaOuXyg58TMrpe3UuTnQJ/Q3lxAaqqCCGEITLo8E=\""
+          "Value": "W/\"WjPY/R1Z1SEx7opXqxYWAfa9orw4uBC3IH6YChSsboo=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-1r8QaOuXyg58TMrpe3UuTnQJ/Q3lxAaqqCCGEITLo8E="
+          "Value": "sha256-WjPY/R1Z1SEx7opXqxYWAfa9orw4uBC3IH6YChSsboo="
         }
       ]
     },
     {
       "Route": "_framework/ChallengeUpFrontend.dll.gz",
-      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\0vjyve5g60-64ko4gcb5u.gz",
+      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\0vjyve5g60-u3tcx5ikgw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9509,7 +9509,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22553"
+          "Value": "22556"
         },
         {
           "Name": "Content-Type",
@@ -9517,11 +9517,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bhvHb52eS5VYQ9emQfFphTq6d63nf4ZdZVVe7L0ISlY=\""
+          "Value": "\"srwkd2gW/OsYZ295KNixvbWIVrX6/sx6jDVbfzRCfO8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Jul 2025 00:06:53 GMT"
+          "Value": "Sat, 05 Jul 2025 00:50:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9539,7 +9539,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-bhvHb52eS5VYQ9emQfFphTq6d63nf4ZdZVVe7L0ISlY="
+          "Value": "sha256-srwkd2gW/OsYZ295KNixvbWIVrX6/sx6jDVbfzRCfO8="
         }
       ]
     },
@@ -9562,11 +9562,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"2IbtEEl6GzflbDELagp0ZdX8VxkMHC6nNzJUYppt3+Y=\""
+          "Value": "\"uyRvm+S2VHXz/Y4gGP2ltbIfvSFqq089z1b7BjETbB4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Jul 2025 00:06:53 GMT"
+          "Value": "Sat, 05 Jul 2025 00:50:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9576,18 +9576,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-2IbtEEl6GzflbDELagp0ZdX8VxkMHC6nNzJUYppt3+Y="
+          "Value": "sha256-uyRvm+S2VHXz/Y4gGP2ltbIfvSFqq089z1b7BjETbB4="
         }
       ]
     },
     {
       "Route": "_framework/ChallengeUpFrontend.pdb",
-      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\it4mostb6w-w6775x5jof.gz",
+      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\it4mostb6w-54rg2bun5n.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000030149542"
+          "Quality": "0.000030148633"
         }
       ],
       "ResponseHeaders": [
@@ -9597,15 +9597,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "33167"
+          "Value": "33168"
         },
         {
           "Name": "ETag",
-          "Value": "\"xYwj4M9l42TWWLLOevPaE+dRvfvYobGq0dGb7OP89kU=\""
+          "Value": "\"7HIkcSydyO6ef7ZuyFS2o+e1URc+XiHKNiZuQ+eWiyY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Jul 2025 00:06:53 GMT"
+          "Value": "Sat, 05 Jul 2025 00:50:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9625,19 +9625,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"2IbtEEl6GzflbDELagp0ZdX8VxkMHC6nNzJUYppt3+Y=\""
+          "Value": "W/\"uyRvm+S2VHXz/Y4gGP2ltbIfvSFqq089z1b7BjETbB4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-2IbtEEl6GzflbDELagp0ZdX8VxkMHC6nNzJUYppt3+Y="
+          "Value": "sha256-uyRvm+S2VHXz/Y4gGP2ltbIfvSFqq089z1b7BjETbB4="
         }
       ]
     },
     {
       "Route": "_framework/ChallengeUpFrontend.pdb.gz",
-      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\it4mostb6w-w6775x5jof.gz",
+      "AssetFile": "C:\\Users\\blaze\\IdeaProjects\\Challenge-Up-App\\ChallengeUpFrontend\\obj\\Debug\\net7.0\\compressed\\it4mostb6w-54rg2bun5n.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9646,7 +9646,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "33167"
+          "Value": "33168"
         },
         {
           "Name": "Content-Type",
@@ -9654,11 +9654,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"xYwj4M9l42TWWLLOevPaE+dRvfvYobGq0dGb7OP89kU=\""
+          "Value": "\"7HIkcSydyO6ef7ZuyFS2o+e1URc+XiHKNiZuQ+eWiyY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Jul 2025 00:06:53 GMT"
+          "Value": "Sat, 05 Jul 2025 00:50:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9676,7 +9676,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-xYwj4M9l42TWWLLOevPaE+dRvfvYobGq0dGb7OP89kU="
+          "Value": "sha256-7HIkcSydyO6ef7ZuyFS2o+e1URc+XiHKNiZuQ+eWiyY="
         }
       ]
     },
