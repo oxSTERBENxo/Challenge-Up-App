@@ -5,34 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45aa23be-cf85-4ffe-8766-e51a9fa59f7e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/ChallengeUpFrontend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/ChallengeUpFrontend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/ChallengeUpFrontend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/ChallengeUpFrontend.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/ChallengeUpFrontend.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/ChallengeUpFrontend.staticwebassets.endpoints.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/ChallengeUpFrontend.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/ChallengeUpFrontend.staticwebassets.runtime.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/dotnet.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/dotnet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/emcc-props.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/emcc-props.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/ChallengeUpFrontend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/ChallengeUpFrontend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/ChallengeUpFrontend.dll.gz" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/ChallengeUpFrontend.dll.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/ChallengeUpFrontend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/ChallengeUpFrontend.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/ChallengeUpFrontend.pdb.gz" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/ChallengeUpFrontend.pdb.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/blazor.boot.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/blazor.boot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/blazor.boot.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/wwwroot/_framework/blazor.boot.json.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ChallengeUpFrontend.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/blazor.boot.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/blazor.boot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/compressed/0vjyve5g60-q68qzxr9fq.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/compressed/5hizwm3l0v-npiz2qut00.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/compressed/it4mostb6w-gfm584ojsy.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ref/ChallengeUpFrontend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ref/ChallengeUpFrontend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/refint/ChallengeUpFrontend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/refint/ChallengeUpFrontend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.build.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.build.endpoints.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets/msbuild.ChallengeUpFrontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets/msbuild.ChallengeUpFrontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +78,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Frontend&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,

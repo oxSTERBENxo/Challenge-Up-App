@@ -108,16 +108,16 @@ public class Worker extends Thread {
                         } else if (!IsPasswordStrong(Extra[1], Extra[0])) {
                             sendStringResponse(os, "Error:3");
                             System.out.println("Error");
-//                        } else if (!IsEmailRight(Extra[1])) {
-//                            out.write("Error: Invalid email");
-//                            out.newLine();
-//                            out.flush();
+//\\                        } else if (!IsEmailRight(Extra[1])) {
+//\\                            out.write("Error: Invalid email");
+//\\                            out.newLine();
+//\\                            out.flush();
                         } else {
                             Clients.add(CD);
                             PlayerStats.add(PSD);
                             sendStringResponse(os, "Successfully created account");
-                            DataManagment.saveList(PlayerStats, "src/main/java/org/example/Files/PlayerStats.json");
-                            DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
+                            DataManagment.saveList(PlayerStats, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\PlayerStats.json");
+                            DataManagment.saveList(Clients, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\Clients.json");
                         }
                         CLientLock.unlock();
                         break;
@@ -142,8 +142,8 @@ public class Worker extends Thread {
                             Clients.remove(CD);
                             PlayerStats.remove(PSD);
                             sendStringResponse(os, "Successfully removed account");
-                            DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
-                            DataManagment.saveList(PlayerStats, "\"src/main/java/org/example/Files/PlayerStats.json");
+                            DataManagment.saveList(Clients, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\Clients.json");
+                            DataManagment.saveList(PlayerStats, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\PlayerStats.json");
                         }else{
                             sendStringResponse(os, "Error:5");
                         }
@@ -189,8 +189,8 @@ public class Worker extends Thread {
                                 Clients.add(CD_new);
                                 PlayerStats.add(PSD_new);
                                 sendStringResponse(os, "Successfully edited account");
-                                DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
-                                DataManagment.saveList(PlayerStats, "\"src/main/java/org/example/Files/PlayerStats.json");
+                                DataManagment.saveList(Clients, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\Clients.json");
+                                DataManagment.saveList(PlayerStats, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\PlayerStats.json");
                             }else {
                                 sendStringResponse(os, "Error:5");
                             }
@@ -215,36 +215,36 @@ public class Worker extends Thread {
                             Clients.remove(CD_old);
                             Clients.add(CD_new);
                             sendStringResponse(os, "Successfully edited account");
-                            DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
+                            DataManagment.saveList(Clients, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\Clients.json");
                         }else {
                             sendStringResponse(os, "Error:5");
                         }
-                        DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
+                        DataManagment.saveList(Clients, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\Clients.json");
                         CLientLock.unlock();
                         break;
                     }
                     //Important: EXTRA(USERNAME;EMAIL;PASSWORD;NEW EMAIL)
-//                    case "EditAccountEmail":{
-//                        CLientLock.lock();
-//                        String[] Extra = cmd.getExtra().split(";");
-//
-//                        String NewEmail = cmd.getExtra();
-//                        ClientData CD_old = new ClientData(Extra[0], Extra[1], Extra[2]);
-//                        ClientData CD_new = new ClientData(Extra[0], Extra[3], Extra[2]);
-//                        if(Clients.contains(CD_old)) {
-//                            Clients.remove(CD_old);
-//                            Clients.add(CD_new);
-//                            out.write("Successfully edited account");
-//                            out.newLine();
-//                            out.flush();
-//                            DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
-//                        }else {
-//                            out.write("Error: Account does not exist");
-//                        }
-//                        DataManagment.saveList(Clients, "src/main/java/org/example/Files/Clients.json");
-//                        CLientLock.unlock();
-//                        break;
-//                    }
+//\\                    case "EditAccountEmail":{
+//\\                        CLientLock.lock();
+//\\                        String[] Extra = cmd.getExtra().split(";");
+//\\
+//\\                        String NewEmail = cmd.getExtra();
+//\\                        ClientData CD_old = new ClientData(Extra[0], Extra[1], Extra[2]);
+//\\                        ClientData CD_new = new ClientData(Extra[0], Extra[3], Extra[2]);
+//\\                        if(Clients.contains(CD_old)) {
+//\\                            Clients.remove(CD_old);
+//\\                            Clients.add(CD_new);
+//\\                            out.write("Successfully edited account");
+//\\                            out.newLine();
+//\\                            out.flush();
+//\\                            DataManagment.saveList(Clients, "src\main\java\org\example\Files\Clients.json");
+//\\                        }else {
+//\\                            out.write("Error: Account does not exist");
+//\\                        }
+//\\                        DataManagment.saveList(Clients, "src\main\java\org\example\Files\Clients.json");
+//\\                        CLientLock.unlock();
+//\\                        break;
+//\\                    }
 
                     //Points Management
 
@@ -269,7 +269,7 @@ public class Worker extends Thread {
                             PSD.setCompleted(true);
                             PlayerStats.add(PSD);
                             sendStringResponse(os, "Successfully marked task completed");
-                            DataManagment.saveList(PlayerStats, "src/main/java/org/example/Files/PlayerStats.json");
+                            DataManagment.saveList(PlayerStats, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\PlayerStats.json");
                         }else {
                             sendStringResponse(os, "Error:5");
                         }
@@ -295,7 +295,7 @@ public class Worker extends Thread {
                                 PSD.setCompleted(false);
                                 PlayerStats.add(PSD);
                                 sendStringResponse(os, "Successfully marked task not completed");
-                                DataManagment.saveList(PlayerStats, "src/main/java/org/example/Files/PlayerStats.json");
+                                DataManagment.saveList(PlayerStats, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\PlayerStats.json");
                             }else {
                                 sendStringResponse(os, "Error:5");
                             }
@@ -379,17 +379,17 @@ public class Worker extends Thread {
                         break;
                     }
                     //Important: NONE
-//                    case "GetTop10":{
-//                        PlayerLock.lock();
-//                        List<PlayerStatData> temp = PlayerStats;
-//                        temp.sort((a,b) -> Integer.compare(b.getPoints(), a.getPoints()));
-//                        List<PlayerStatData> top10 = new ArrayList<>(temp.subList(0, Math.min(PlayerStats.size(), 10)));
-//                        out.write(gson.toJson(top10));
-//                        out.newLine();
-//                        out.flush();
-//                        PlayerLock.unlock();
-//                        break;
-//                    }
+//\\                    case "GetTop10":{
+//\\                        PlayerLock.lock();
+//\\                        List<PlayerStatData> temp = PlayerStats;
+//\\                        temp.sort((a,b) -> Integer.compare(b.getPoints(), a.getPoints()));
+//\\                        List<PlayerStatData> top10 = new ArrayList<>(temp.subList(0, Math.min(PlayerStats.size(), 10)));
+//\\                        out.write(gson.toJson(top10));
+//\\                        out.newLine();
+//\\                        out.flush();
+//\\                        PlayerLock.unlock();
+//\\                        break;
+//\\                    }
 
                     //Task Management
                     //Important: EXTRA(USERNAME)
@@ -407,7 +407,7 @@ public class Worker extends Thread {
                         }
 
                         if(PSD != null) {
-                            Task T = DataManagment.loadObject("src/main/java/org/example/Files/TaskFile.json", Task.class);
+                            Task T = DataManagment.loadObject(System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\TaskFile.json", Task.class);
                             T.setPointsAmount(PSD.CalulatePointsToBeEarned(T));
                             System.out.println(T.getPointsAmount());
                             sendJsonResponse(T, os);
@@ -443,7 +443,7 @@ public class Worker extends Thread {
                         "Access-Control-Allow-Headers: Content-Type\r\n" +
                         "Content-Type: application/json\r\n" +
                         "Content-Length: " + body.length + "\r\n" +
-                        "\r\n";
+                        "\r\n";;
 
         // Send headers
         outputStream.write(httpResponse.getBytes(StandardCharsets.UTF_8));

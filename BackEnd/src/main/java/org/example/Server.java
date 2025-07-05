@@ -38,6 +38,8 @@ public class Server extends Thread {
 
     @Override
     public void run() {
+        System.out.println("Working directory: " + System.getProperty("user.dir"));
+
         System.out.println("Server started at:" + LocalDateTime.now());
 
         ServerSocket serverSocket = null;
@@ -48,14 +50,14 @@ public class Server extends Thread {
         }
         File ClientsFile = null;
         File PlayerStatsFile = null;
-        File TasksFile = new File("src/main/java/org/example/Files/Tasks.json");
+        File TasksFile = new File(System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\Tasks.json");
         File TaskFile = null;
         File TimeFile = null;
 
 
 //      check if the clients file exists
         try {
-            PlayerStatsFile = new File("src/main/java/org/example/Files/PlayerStats.json");
+            PlayerStatsFile = new File(System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\PlayerStats.json");
             if (PlayerStatsFile.createNewFile()) {
                 System.out.println("File created");
                 FileWriter PlayerStatsFileWriter = new FileWriter(PlayerStatsFile);
@@ -72,7 +74,7 @@ public class Server extends Thread {
 
 //      check if the PlayerStats file exists
         try {
-            ClientsFile = new File("src/main/java/org/example/Files/Clients.json");
+            ClientsFile = new File(System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\Clients.json");
             if (ClientsFile.createNewFile()) {
                 System.out.println("File created");
                 FileWriter ClientsWriter = new FileWriter(ClientsFile);
@@ -89,7 +91,7 @@ public class Server extends Thread {
 
 //      Check if TimeFile Exists
         try {
-            TimeFile = new File("src/main/java/org/example/Files/TimeFile.txt");
+            TimeFile = new File(System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\TimeFile.txt");
             if (TimeFile.createNewFile()) {
                 System.out.println("File created");
                 FileWriter TimeFIleWriter = new FileWriter(TimeFile);
@@ -108,7 +110,7 @@ public class Server extends Thread {
         Gson gson = new Gson();
 //        Load Clients
         if (ClientsFile.length() > 2){
-            try(Reader UserReader = new FileReader("src/main/java/org/example/Files/Clients.json")) {
+            try(Reader UserReader = new FileReader(System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\Clients.json")) {
                 Type clientListType = new TypeToken<List<ClientData>>(){}.getType();
                 List<ClientData> CDList = gson.fromJson(UserReader, clientListType);
                 if (CDList != null) clients.addAll(CDList);
@@ -120,7 +122,7 @@ public class Server extends Thread {
         }
 //        Load PlayerStat
         if (PlayerStatsFile.length() > 2){
-            try(Reader PlayerStatsReader = new FileReader("src/main/java/org/example/Files/PlayerStats.json")) {
+            try(Reader PlayerStatsReader = new FileReader(System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\PlayerStats.json")) {
                 Type PlayerStatsType = new TypeToken<List<PlayerStatData>>(){}.getType();
                 List<PlayerStatData> CDList = gson.fromJson(PlayerStatsReader, PlayerStatsType);
                 if (CDList != null) PlayerStats.addAll(CDList);
@@ -132,7 +134,7 @@ public class Server extends Thread {
         }
 //        Load Tasks
         if (TasksFile.length() > 2){
-            try(Reader TasksReader = new FileReader("src/main/java/org/example/Files/Tasks.json")) {
+            try(Reader TasksReader = new FileReader(System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\Tasks.json")) {
                 Type TasksType = new TypeToken<List<Task>>(){}.getType();
                 List<Task> CDList = gson.fromJson(TasksReader, TasksType);
                 if (CDList != null) Tasks.addAll(CDList);
@@ -148,13 +150,13 @@ public class Server extends Thread {
 
 //      Check if TaskFile Exists
         try {
-            TaskFile = new File("src/main/java/org/example/Files/TaskFile.json");
+            TaskFile = new File(System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\TaskFile.json");
             if (TaskFile.createNewFile()) {
                 System.out.println("File created");
                 Task T = new Task("Prepare to start your improvement journey!", "Welcome");
                 T.setCompletedAt(LocalDate.now().toString());
                 T.setPointsAmount(0);
-                DataManagment.saveObject(T, "src/main/java/org/example/Files/TaskFile.json");
+                DataManagment.saveObject(T, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\TaskFile.json");
             }
             else{
                 System.out.println("File already exists");
@@ -215,7 +217,7 @@ public class Server extends Thread {
                             System.out.println(randomTask.getToDo());
                             if (randomTask != null && randomTask.getToDo() != null) {
                                 TT = randomTask;
-                                DataManagment.saveObject(randomTask,"src/main/java/org/example/Files/TaskFile.json");
+                                DataManagment.saveObject(randomTask,System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\TaskFile.json");
                             } else {
                                 System.err.println("Random task or task content was null.");
                             }
@@ -227,7 +229,7 @@ public class Server extends Thread {
                         for (PlayerStatData playerStat : PlayerStats) {
                             playerStat.UpdateValue(TT);
                         }
-                        DataManagment.saveList(PlayerStats, "src/main/java/org/example/Files/PlayerStats.json");
+                        DataManagment.saveList(PlayerStats, System.getProperty("user.dir") + "\\BackEnd\\src\\main\\java\\org\\example\\Files\\PlayerStats.json");
 
                     } else {
                         System.out.println("Date unchanged. Still " + lastDate);
